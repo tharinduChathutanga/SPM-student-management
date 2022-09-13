@@ -40,7 +40,7 @@ class StdpayUpdate extends Component {
 
     }
 
-
+//update operation start here
     onSubmit = (e) => {
 
         e.preventDefault();
@@ -66,8 +66,7 @@ class StdpayUpdate extends Component {
 
         console.log(data)
 
-        // //validation start here
-        //validation
+       //validation start here
         const semail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const re = /^[0-9\b]+$/;
         if (sfirstName == "" || slastName == "" || studentId == "" || gradeLevel == "" || mobiNum == "" || email == "" || parentName == "" || payMethod == "" || parentMnu == "") {
@@ -144,7 +143,7 @@ class StdpayUpdate extends Component {
 
         const id = this.props.match.params.id;
 
-        //post/${id}/
+        //retrive one value from database 
         axios.get(`http://localhost:8000/stdpay/${id}`).then((res) => {
             if (res.data.success) {
 
