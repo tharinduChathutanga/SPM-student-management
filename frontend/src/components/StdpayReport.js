@@ -16,7 +16,7 @@ class StdpayReport extends Component {
 
     }
 
-    //call the link
+    //call the link 
     componentDidMount() {
         this.retrievePosts();
     }
