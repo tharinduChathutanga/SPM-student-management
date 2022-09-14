@@ -12,6 +12,9 @@ import stdUpdate from './components/StdpayUpdate.js';
 import stdDe from './components/StdpayD.js';
 import maill from './components/stpMail.js';
 import success from './components/StdpaySuccess.js';
+import TimeTables from './components/TimeTables';
+import CreateTimeTable from './components/CreateTimeTable';
+import EditTimeTable from './components/EditTimeTable';
 
 
 export default class App extends Component {
@@ -36,6 +39,10 @@ export default class App extends Component {
     
        
         <Route path="/Sreport" exact component={stdReport} />
+
+        <Route path="/timetables" exact element={<TimeTables/>}></Route>
+        <Route path="/add" element={<CreateTimeTable/>}></Route>
+        <Route path="/edit/:id" element={<EditTimeTable/>}></Route>
     
       </div>
       </BrowserRouter>
