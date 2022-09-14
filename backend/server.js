@@ -8,6 +8,7 @@ const app = express();
 //import routes
 const postClass = require('./routes/classRoutes');
 const stdpayment = require('./routes/student_pay_R.js');
+const router = require("./routes/examTimeTable_routes");
 
 
 //app middleware
@@ -17,6 +18,7 @@ app.use(cors());
 //route middleware
 app.use(postClass);
 app.use(stdpayment);
+app.use("/timetables", router);
 
 
 const PORT = 8000;
