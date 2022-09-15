@@ -58,7 +58,7 @@ router.get("/postClass/:id",(req,res) =>{
     });
 });
 
-//update posts
+//update posts(Class Details)
 
 router.put('/postClass/update/:id',(req,res) =>{
     Posts.findByIdAndUpdate(
