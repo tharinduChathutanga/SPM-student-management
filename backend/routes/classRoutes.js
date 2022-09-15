@@ -58,9 +58,6 @@ router.get("/postClass/:id",(req,res) =>{
     });
 });
 
-
-
-
 //update posts
 
 router.put('/postClass/update/:id',(req,res) =>{
