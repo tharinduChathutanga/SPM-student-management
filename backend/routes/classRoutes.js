@@ -77,7 +77,7 @@ router.put('/postClass/update/:id',(req,res) =>{
         });    
     });
 
-//delete post
+//delete post(class details)
 
 router.delete('/postClass/delete/:id',(req,res) =>{
     Posts.findByIdAndRemove(req.params.id).exec((err,deletedPost) =>{
