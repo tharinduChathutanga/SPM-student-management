@@ -16,13 +16,13 @@ export default class createClass extends Component {
       teacherName: "",
       classType: "",
       hallNo: "",
-      startDate:"",
-      time:""
+      startDate: "",
+      time: ""
     }
   }
 
   handleInputChange = (e) => {
-    const {name,value} = e.target;
+    const { name, value } = e.target;
 
     this.setState({
       ...this.state,
@@ -64,11 +64,11 @@ export default class createClass extends Component {
     }
     else if (classType.length < 7) {
       swal("Invalid Class Type", "Choose a valid CLASS TYPE from drop down list; other than the word 'Select' ", "error");
-    } 
+    }
     else if (hallNo.length > 8) {
       swal("Invalid Hall Number", "Length should not be greater than 8", "error");
-    } 
-    
+    }
+
     else {
 
       swal({
@@ -83,7 +83,7 @@ export default class createClass extends Component {
 
             axios.post("/postClass/save", data).then((res) => {
               if (res.data.success) {
-                
+
                 this.setState(
                   {
                     subjectName: "",
@@ -111,6 +111,7 @@ export default class createClass extends Component {
 
     }
   }
+  
   //Demo button
   demo = () => {
 
@@ -154,13 +155,13 @@ export default class createClass extends Component {
       <div>
         <div className="row" >
           <div className="col-6" >
-          <section id="hire">
+            <section id="hire">
               <div className="topic" style={{ marginTop: "5%" }}>
                 <div className="container-fluid">
                   <div className="Jumbotron jumbotron-fluid">
                     <div className="container hire">
                       <br />
-                      <marquee direction="left"><p className="display-3 " style = {{color:'#8b4513'}}><b>Enter New Class Details Here !</b></p></marquee>
+                      <marquee direction="left"><p className="display-3 " style={{ color: '#8b4513' }}><b>Enter New Class Details Here !</b></p></marquee>
                     </div>
                   </div>
                 </div>
@@ -176,12 +177,12 @@ export default class createClass extends Component {
 
                 <div className="card-body">
                   <div className="col-md-8 mt-4 mx-auto">
-                    <h1 className="text-center topic" style = {{color:'#00008b'}}>Add Class Details</h1>
+                    <h1 className="text-center topic" style={{ color: '#00008b' }}>Add Class Details</h1>
                     <br></br>
 
-                    <form className="needs-validation" align="center" style={{ width: "110%", borderStyle: "solid", borderWidth:"5px", boxShadow: "0 8px 350px 0 rgba(0, 0, 0, 0.5)", alignContent:"center", borderColor:"navy"}} noValidate >
+                    <form className="needs-validation" align="center" style={{ width: "110%", borderStyle: "solid", borderWidth: "5px", boxShadow: "0 8px 350px 0 rgba(0, 0, 0, 0.5)", alignContent: "center", borderColor: "navy" }} noValidate >
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Subject Name: </b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Subject Name: </b></label>
                         <input type="text"
                           className="form-control"
                           name="subjectName"
@@ -191,7 +192,7 @@ export default class createClass extends Component {
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Subject Code:</b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Subject Code:</b></label>
                         <input type="text"
                           className="form-control"
                           name="subjectCode"
@@ -201,23 +202,23 @@ export default class createClass extends Component {
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Grade:</b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Grade:</b></label>
                         <select
-                      className="form-control"
-                      style ={{marginBottom:'15px', maxWidth:'500px'}}
-                      name="grade"
-                      placeholder="Select Grade"
-                      value={this.state.grade}
-                      onChange={this.handleInputChange}
-                      required
-                    >
-                      <option value = "Select">Select</option>
-                      <option value = "10">10</option>
-                      <option value = "11">11</option> </select>
+                          className="form-control"
+                          style={{ marginBottom: '15px', maxWidth: '500px' }}
+                          name="grade"
+                          placeholder="Select Grade"
+                          value={this.state.grade}
+                          onChange={this.handleInputChange}
+                          required
+                        >
+                          <option value="Select">Select</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option> </select>
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Teacher's Name: </b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Teacher's Name: </b></label>
                         <input type="text"
                           className="form-control"
                           name="teacherName"
@@ -227,26 +228,26 @@ export default class createClass extends Component {
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Class Type:</b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Class Type:</b></label>
                         <select
-                      className="form-control"
-                      style ={{marginBottom:'15px', maxWidth:'500px'}}
-                      name="classType"
-                      placeholder="Select Class Type"
-                      value={this.state.classType}
-                      onChange={this.handleInputChange}
-                      required
-                    >
-                      <option value = "Select">Select</option>
-                      <option value = "Theory Group Class">Theory Group Class</option>
-                      <option value = "Theory Mass Class">Theory Mass Class</option>
-                      <option value = "Paper Group Class">Paper Group Class</option>
-                      <option value = "Paper Mass Class">Paper Mass Class</option> 
-                      <option value = "Revision Class">Revision Class</option> </select>
+                          className="form-control"
+                          style={{ marginBottom: '15px', maxWidth: '500px' }}
+                          name="classType"
+                          placeholder="Select Class Type"
+                          value={this.state.classType}
+                          onChange={this.handleInputChange}
+                          required
+                        >
+                          <option value="Select">Select</option>
+                          <option value="Theory Group Class">Theory Group Class</option>
+                          <option value="Theory Mass Class">Theory Mass Class</option>
+                          <option value="Paper Group Class">Paper Group Class</option>
+                          <option value="Paper Mass Class">Paper Mass Class</option>
+                          <option value="Revision Class">Revision Class</option> </select>
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Hall Number: </b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Hall Number: </b></label>
                         <input type="text"
                           className="form-control"
                           name="hallNo"
@@ -256,23 +257,23 @@ export default class createClass extends Component {
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Start Date: </b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Start Date: </b></label>
                         <input type="Date"
                           className="form-control"
                           name="startDate"
                           placeholder="Select Start Date"
                           value={this.state.startDate}
-                          onChange={this.handleInputChange} required/>
+                          onChange={this.handleInputChange} required />
                       </div>
 
                       <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
-                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Time: </b></label>
+                        <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Time: </b></label>
                         <input type=""
                           className="form-control"
                           name="time"
                           placeholder="Enter day and time duration"
                           value={this.state.time}
-                          onChange={this.handleInputChange} required/>
+                          onChange={this.handleInputChange} required />
                       </div>
 
                       <button type="button" class="btn btn-outline-danger" onClick={this.demo} > Demo </button>
@@ -283,10 +284,10 @@ export default class createClass extends Component {
                       </button>
 
                       <br />
-                      <button className="btn btn-outline-success" type="submit" style={{ marginTop: '15px', backgroundColor: '#410061' }} ><a href="/email"> 
+                      <button className="btn btn-outline-success" type="submit" style={{ marginTop: '15px', backgroundColor: '#410061' }} ><a href="/email">
                         Inform Teachers Via An Email</a></button>
 
-                        <br />
+                      <br />
                       <button className="btn btn-outline-warning" type="submit" style={{ marginTop: '15px' }} ><a href="/"> <i className="far fa-check-square" style={{ textDecoration: "none" }}></i>
                         &nbsp; View Class Table</a></button>
 
