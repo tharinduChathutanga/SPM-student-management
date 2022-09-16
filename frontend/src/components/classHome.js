@@ -51,7 +51,9 @@ export default class classHome extends Component {
       });
   }
 
-  filterData(posts, searchKey) {
+  //Search operation
+  
+    filterData(posts, searchKey) {
     const result = posts.filter((post) =>
 
       post.subjectName.toLowerCase().includes(searchKey) ||
