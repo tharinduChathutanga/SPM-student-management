@@ -30,6 +30,7 @@ export default class createClass extends Component {
     })
 
   }
+
   //save to database
   onSubmit = (e) => {
 
@@ -51,7 +52,7 @@ export default class createClass extends Component {
 
     console.log(data)
 
-    //validation
+    //validations
 
     if (subjectName === "" || subjectCode === "" || grade === "" || teacherName === "" || classType === "" || hallNo === "" || startDate === "" || time === "") {
       swal("Please fill the form correctly", "Form values cannot be empty", "error");
@@ -94,11 +95,8 @@ export default class createClass extends Component {
                     hallNo: "",
                     startDate: "",
                     time: ""
-
                   }
-
                 )
-
               }
             });
             swal("Class Details Added Successfully!", {
