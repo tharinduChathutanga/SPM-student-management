@@ -13,6 +13,8 @@ constructor(props){
   };
 }
 
+//Retrieve Data
+
 componentDidMount(){
   this.retrievePosts();
 }
@@ -30,6 +32,8 @@ retrievePosts(){
   });
 
 }
+
+//Search Operation
 
 filterData(posts, searchKey){
 
