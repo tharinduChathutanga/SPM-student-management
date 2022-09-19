@@ -58,7 +58,7 @@ router.get("/teacsal/:id", (req, res) => {
     });
 });
 
-//update salary management
+//update salary details
 router.put('/teacsal/update/:id', (req, res) => {
 
     TeachSalPost.findByIdAndUpdate(

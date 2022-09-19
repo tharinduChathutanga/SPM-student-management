@@ -36,7 +36,6 @@ const teachersalaryScheema = new mongoose.Schema({
         required: true,
     }
 
-   
 
 });
 
