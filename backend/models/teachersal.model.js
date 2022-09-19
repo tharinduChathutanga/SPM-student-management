@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const teachersalaryScheema = new mongoose.Schema({
 
-
-
     teachName: {
         type: String,
         required: true
@@ -38,8 +36,8 @@ const teachersalaryScheema = new mongoose.Schema({
         required: true,
     }
 
-   
 
 });
+
 module.exports = mongoose.model('Teacher_Salary', teachersalaryScheema);
 

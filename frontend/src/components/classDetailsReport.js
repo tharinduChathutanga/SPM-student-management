@@ -1,73 +1,70 @@
-import React, { Component } from 'react';
+import React ,{ Component } from 'react';
 import axios from 'axios';
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
 
 export default class classDetailsReport extends Component {
 
-  constructor(props) {
-    super(props);
+constructor(props){
+  super(props);
 
-    this.state = {
-      posts: []
-    };
-  }
+  this.state ={
+    posts:[]
+  };
+}
 
-  //Retrieve Data
+componentDidMount(){
+  this.retrievePosts();
+}
 
-  componentDidMount() {
-    this.retrievePosts();
-  }
+retrievePosts(){
+  axios.get("/postsClass").then(res =>{
 
-  retrievePosts() {
-    axios.get("/postsClass").then(res => {
-
-      if (res.data.success) {
-        this.setState({
-          posts: res.data.existingPosts
-        });
-
-        console.log(this.state.posts)
-      }
+  if(res.data.success){
+    this.setState({
+      posts:res.data.existingPosts
     });
 
+    console.log(this.state.posts)
   }
+  });
 
-  //Search Operation
+}
 
-  filterData(posts, searchKey) {
+filterData(posts, searchKey){
 
-    const result = posts.filter((post) =>
+    const result = posts.filter((post) => 
+    
+    post.subjectName.toLowerCase().includes(searchKey) ||
+    post.subjectCode.toLowerCase().includes(searchKey) ||
+    post.teacherName.toLowerCase().includes(searchKey) ||
+    post.classType.toLowerCase().includes(searchKey) ||
+    post.hallNo.toLowerCase().includes(searchKey) ||
+    post.startDate.toLowerCase().includes(searchKey) ||
+    post.time.toLowerCase().includes(searchKey)
 
-      post.subjectName.toLowerCase().includes(searchKey) ||
-      post.subjectCode.toLowerCase().includes(searchKey) ||
-      post.teacherName.toLowerCase().includes(searchKey) ||
-      post.classType.toLowerCase().includes(searchKey) ||
-      post.hallNo.toLowerCase().includes(searchKey) ||
-      post.startDate.toLowerCase().includes(searchKey) ||
-      post.time.toLowerCase().includes(searchKey)
+  )
+  this.setState({posts:result})
+}
 
-    )
-    this.setState({ posts: result })
-  }
 
-  handleSearchArea = (e) => {
+handleSearchArea = (e) =>{
 
-    const searchKey = e.currentTarget.value;
+  const searchKey = e.currentTarget.value;
 
-    axios.get('/postsClass').then(res => {
+  axios.get('/postsClass').then(res =>{
 
-      if (res.data.success) {
+    if(res.data.success){
 
-        this.filterData(res.data.existingPosts, searchKey)
+      this.filterData(res.data.existingPosts, searchKey)
 
-      }
-    })
-  }
+    }
+  })
+}
 
-  //Report pdf generation
+//Report pdf generation
 
-  jsPdfGenerator = () => {
+jsPdfGenerator = () => {
 
     //New document in jspdf
     var doc = new jsPdf('l', 'pt', 'a3');
@@ -84,31 +81,31 @@ export default class classDetailsReport extends Component {
     doc.save("Class Details.pdf");
   }
 
-  render() {
+  render(){
 
-    return (
+    return(
 
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-9 mt-2 mb-2">
-            <br></br> <center>
-              <h4>All Class Details</h4>
-            </center>
+      <div className = "container">
+        <div className = "row">
+          <div className ="col-lg-9 mt-2 mb-2">
+          <br></br> <center>
+          <h4>All Class Details</h4>
+          </center>
           </div>
-          <div className="col-lg-9 mt-2 mb-2">
-            <input
-              className="form-control"
-              type="search"
-              placeholder="search"
-              name="search"
-              onChange={this.handleSearchArea}>
-            </input>
-          </div>
-
+      <div className ="col-lg-9 mt-2 mb-2">
+        <input
+        className = "form-control"
+        type = "search"
+        placeholder = "search"
+        name = "search"
+        onChange = {this.handleSearchArea}>
+        </input>
         </div>
-        <table Id="class-table" className="table table-hover" style={{ marginTop: '40px', color: '#362419' }}>
+
+   </div>
+        <table Id = "class-table" className = "table table-hover" style = {{marginTop:'40px', color:'#362419'}}>
           <thead>
-            <tr>
+           <tr>
               <th scope="col"><b>Class ID</b></th>
               <th scope="col"><b>Subject Name</b></th>
               <th scope="col"><b>Subject Code</b></th>
@@ -119,12 +116,12 @@ export default class classDetailsReport extends Component {
               <th scope="col"><b>Start Date</b></th>
               <th scope="col"><b>Time</b></th>
 
-            </tr>
+             </tr>
           </thead>
-          <tbody>
-            {this.state.posts.map((posts, index) => (
-              <tr key={index}>
-                <th scope="row">{index + 1}</th>
+            <tbody>
+              {this.state.posts.map((posts,index) =>(
+                <tr key={index}>
+                  <th scope="row">{index+1}</th>
 
                 <td>{posts.subjectName}</td>
                 <td>{posts.subjectCode}</td>
@@ -135,16 +132,16 @@ export default class classDetailsReport extends Component {
                 <td>{posts.startDate}</td>
                 <td>{posts.time}</td>
 
-              </tr>
+            </tr>
             ))}
           </tbody>
-        </table>
+         </table>
 
-        <button className="btn-primary" style={{ marginTop: '15px', backgroundColor: '#000080' }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Generate Report PDF</button>
-
-      </div>
-
-    )
-  }
+         <button className="btn-primary" style={{ marginTop: '15px', backgroundColor: '#000080' }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Generate Report PDF</button>
+          
+        </div>
+             
+    )  
+}
 }
 

@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 
 export default class editClass extends Component {
 
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +26,7 @@ export default class editClass extends Component {
       ...this.state,
       [name]: value
     })
+
   }
 
   onSubmit = (e) => {
@@ -102,6 +104,8 @@ export default class editClass extends Component {
           time: res.data.post.time
 
         });
+
+
       }
     })
 
@@ -109,6 +113,7 @@ export default class editClass extends Component {
 
   render() {
     return (
+
 
       <div className="container border"
 
@@ -172,7 +177,7 @@ export default class editClass extends Component {
                       <option value="10">10</option>
                       <option value="11">11</option> </select>
                   </div>
-
+              
                   <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
                     <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Teacher's Name: </b></label>
                     <input type="text"
@@ -232,17 +237,21 @@ export default class editClass extends Component {
                       onChange={this.handleInputChange} required />
                   </div>
 
-                  <button className="btn btn-primary" type="submit" style={{ marginTop: '15px', backgroundColor: '#000080' }} onClick={this.onSubmit}>
+                  <button className="btn btn-primary" type="submit" style={{ marginTop: '15px', backgroundColor: '#000080'  }} onClick={this.onSubmit}>
                     <i className="far fa-check-square"></i>
                     &nbsp; Update
                   </button>
 
                 </form>
+
               </div>
             </div>
           </div>
+
           <br /><br /><br />
+
         </div>
+
       </div>
     )
   }

@@ -58,7 +58,10 @@ router.get("/postClass/:id",(req,res) =>{
     });
 });
 
-//update posts(Class Details)
+
+
+
+//update posts
 
 router.put('/postClass/update/:id',(req,res) =>{
     Posts.findByIdAndUpdate(
@@ -77,7 +80,7 @@ router.put('/postClass/update/:id',(req,res) =>{
         });    
     });
 
-//delete post(class details)
+//delete post
 
 router.delete('/postClass/delete/:id',(req,res) =>{
     Posts.findByIdAndRemove(req.params.id).exec((err,deletedPost) =>{
