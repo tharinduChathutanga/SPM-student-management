@@ -5,7 +5,7 @@ const path = require('path');
 
 const router = express.Router();
 
-//insert mobile payment data in data base 
+//insert Teacher salary details in data base 
 router.post('/teacsal/save', (req, res) => {
 
     let newTeachSalPost = new TeachSalPost(req.body);
@@ -24,7 +24,7 @@ router.post('/teacsal/save', (req, res) => {
     });
 });
 
-//retrive mobile payment data 
+//retrive salary details
 router.get('/teacsal', (req, res) => {
     TeachSalPost.find().exec((err, teachsalpost) => {
         if (err) {
@@ -41,7 +41,7 @@ router.get('/teacsal', (req, res) => {
     });
 });
 
-//get a specific data
+//get a specific data of salary
 router.get("/teacsal/:id", (req, res) => {
 
     let teachid = req.params.id;
@@ -58,6 +58,7 @@ router.get("/teacsal/:id", (req, res) => {
     });
 });
 
+//update salary management
 router.put('/teacsal/update/:id', (req, res) => {
 
     TeachSalPost.findByIdAndUpdate(
@@ -82,7 +83,7 @@ router.put('/teacsal/update/:id', (req, res) => {
 });
 
 
-//delete mobile payment details
+//delete salary details in specific id 
 router.delete('/teacsal/delete/:id', (req, res) => {
 
     TeachSalPost.findByIdAndRemove(req.params.id).exec((err, teachsalpost) => {
