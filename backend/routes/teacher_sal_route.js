@@ -24,7 +24,7 @@ router.post('/teacsal/save', (req, res) => {
     });
 });
 
-//retrive salary details
+//Display all salary Details of teachers
 router.get('/teacsal', (req, res) => {
     TeachSalPost.find().exec((err, teachsalpost) => {
         if (err) {
@@ -41,7 +41,7 @@ router.get('/teacsal', (req, res) => {
     });
 });
 
-//get a specific data of salary
+//Display Relevant salary details of Relavant teacher id
 router.get("/teacsal/:id", (req, res) => {
 
     let teachid = req.params.id;
