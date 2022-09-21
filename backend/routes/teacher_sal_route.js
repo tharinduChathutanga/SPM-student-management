@@ -83,7 +83,7 @@ router.put('/teacsal/update/:id', (req, res) => {
 });
 
 
-//delete salary details in specific id 
+//Delete salary details in specific id 
 router.delete('/teacsal/delete/:id', (req, res) => {
 
     TeachSalPost.findByIdAndRemove(req.params.id).exec((err, teachsalpost) => {
