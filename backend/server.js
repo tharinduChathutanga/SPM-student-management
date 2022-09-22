@@ -8,7 +8,7 @@ const app = express();
 const postClass = require('./routes/classRoutes');
 const stdpayment = require('./routes/student_pay_R.js');
 const teachsal = require('./routes/teacher_sal_route.js');
-
+const postNotice = require('./routes/noticeRoutes');
 
 //app middleware
 app.use(bodyParser.json());
@@ -18,7 +18,7 @@ app.use(cors());
 app.use(postClass);
 app.use(stdpayment);
 app.use(teachsal);
-
+app.use(postNotice);
 
 const PORT = 8000;
 const DB_URL = "mongodb+srv://user:user@cluster0.odqhx.mongodb.net/?retryWrites=true&w=majority";
