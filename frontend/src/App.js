@@ -12,6 +12,7 @@ import stdUpdate from './components/StdpayUpdate.js';
 import stdDe from './components/StdpayD.js';
 import maill from './components/stpMail.js';
 import success from './components/StdpaySuccess.js';
+import Teachersaladd from './components/TeacherSalAdd.js';
 
 
 export default class App extends Component {
@@ -26,16 +27,14 @@ export default class App extends Component {
         <Route path="/email" exact component={classTeacherEmailer}></Route>
         <Route path="/classReport" exact component={classDetailsReport}></Route>
         
-   
+   {/* shamali */}
         <Route path="/payadd" exact component={stdpay} />
         <Route path="/paydetails" exact component={stdpayH} />
-      
         <Route path="/StdUpdate/:id" exact component={stdUpdate} />
         <Route path="/mail" exact component={maill} />
         <Route path="/success" component={success}></Route>
-    
-       
         <Route path="/Sreport" exact component={stdReport} />
+        <Route path="/addSal" exact component={Teachersaladd} />
     
       </div>
       </BrowserRouter>
