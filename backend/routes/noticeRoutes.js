@@ -58,10 +58,7 @@ router.get("/postNotice/:id",(req,res) =>{
     });
 });
 
-
-
-
-//update posts
+//update posts (Update notices)
 
 router.put('/postNotice/update/:id',(req,res) =>{
     Posts.findByIdAndUpdate(
