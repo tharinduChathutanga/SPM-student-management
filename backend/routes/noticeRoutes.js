@@ -24,7 +24,7 @@ router.post('/postNotice/save',(req,res) =>{
 
 });
 
-//get posts
+//get posts( All Notices)
 
 router.get('/postsNotice',(req,res) =>{
     Posts.find().exec((err,posts) =>{
@@ -40,7 +40,7 @@ router.get('/postsNotice',(req,res) =>{
     });
 });
 
-//get a specific post
+//get a specific post (Get specific notice)
 
 router.get("/postNotice/:id",(req,res) =>{
 
