@@ -12,9 +12,9 @@ import stdUpdate from './components/StdpayUpdate.js';
 import stdDe from './components/StdpayD.js';
 import maill from './components/stpMail.js';
 import success from './components/StdpaySuccess.js';
-import TimeTables from './components/TimeTables';
-import CreateTimeTable from './components/CreateTimeTable';
-import EditTimeTable from './components/EditTimeTable';
+import TimeTables from './components/Exam Time Table/TimeTables';
+import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
+import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 
 
 export default class App extends Component {
@@ -40,9 +40,12 @@ export default class App extends Component {
        
         <Route path="/Sreport" exact component={stdReport} />
 
-        <Route path="/timetables" exact element={<TimeTables/>}></Route>
-        <Route path="/add" element={<CreateTimeTable/>}></Route>
-        <Route path="/edit/:id" element={<EditTimeTable/>}></Route>
+        <Route path="/timetables" exact component={TimeTables}></Route>
+        <Route path="/timetables/add" component={CreateTimeTable}></Route>
+        <Route path="/timetables/update/:id" component={EditTimeTable}></Route>
+        
+
+
     
       </div>
       </BrowserRouter>

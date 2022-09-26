@@ -126,15 +126,3 @@ router.delete('/delete/:id' ,async(req,res) =>{
 
   module.exports = router;
 
-/*const express = require("express");
-const router = express.Router();
-const examTimeTable = require("../models/examTimeTable");
-const timetablesController = require("../controllers/examTimeTable_Controller");
-
-router.get("/", timetablesController.getAllTimeTables);
-router.post("/", timetablesController.addTimeTable);
-router.get("/:id", timetablesController.getById);
-router.put("/:id", timetablesController.updateTimeTable);
-router.delete("/:id", timetablesController.deleteTimeTable);
-
-module.exports = router;*/

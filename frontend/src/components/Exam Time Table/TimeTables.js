@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 //import axios from "../../action/axios";
 import swal from "sweetalert";
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
 
 export default class TimeTables extends Component {
   constructor(props) {
@@ -75,6 +77,26 @@ export default class TimeTables extends Component {
     });
   };
 
+  //Report pdf generation
+
+   jsPdfGenerator = () => {
+
+  //New document in jspdf
+  var doc = new jsPdf('l', 'pt', 'a3');
+
+  doc.text(600, 20, 'Exam Time Table', { align: 'center' },);
+  doc.autoTable({ html: '#class-table' })
+
+  doc.autoTable({
+    columnStyles: { europe: { halign: 'center' } },
+    margin: { top: 10 },
+  })
+
+  //save the pdf
+  doc.save("Exam Time Table.pdf");
+}
+
+
   render() {
     return (
       <div className="container">
@@ -103,7 +125,7 @@ export default class TimeTables extends Component {
         </div>
 
         <br></br>
-        <table className="table table-striped">
+        <table className="table table-striped" Id = "class-table">
           <thead className="thead-dark">
             <tr>
               <th scope="col">Subject</th>
@@ -129,7 +151,7 @@ export default class TimeTables extends Component {
                 <td>{timetables.examHall}</td>
                 <a
                   className="btn btn-warning"
-                  href={`/update/${timetables._id}`}
+                  href={`timetables/update/${timetables._id}`}
                 >
                   <i className="fas fa-edit"> </i>&nbsp; Edit
                 </a>
@@ -161,7 +183,7 @@ export default class TimeTables extends Component {
           style={{ backgroundColor: "#c99212" }}
         >
           <a
-            href="/add"
+            href="timetables/add"
             style={{
               textDecoration: "none",
               color: "white",
@@ -171,6 +193,7 @@ export default class TimeTables extends Component {
             Add Time Table Record
           </a>
         </button>
+        <button className="btn-primary" style={{ marginTop: '15px',marginLeft:'10px',padding:"9px", backgroundColor: '#000080' }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Download Exam Time Table</button>
       </div>
       
     );
