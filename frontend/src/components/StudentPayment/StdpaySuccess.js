@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import BG from '../images/success.gif';
+import BG from '../../images/success.gif';
+
 class StdpaySuccess extends Component {
     render() {
         return (
