@@ -13,6 +13,7 @@ import stdDe from './components/StdpayD.js';
 import maill from './components/stpMail.js';
 import success from './components/StdpaySuccess.js';
 import Teachersaladd from './components/TeacherSalAdd.js';
+import TeacherDetails from './components/TeacherSalDetails.js';
 
 
 export default class App extends Component {
@@ -21,6 +22,7 @@ export default class App extends Component {
       <BrowserRouter>
       <div classname ="container">
 
+    {/* Supi */}
         <Route path = "/" exact component = {classHome}></Route>
         <Route path = "/add" exact component = {createClass}></Route>
         <Route path = "/edit/:id" exact component = {editClass}></Route>
@@ -35,6 +37,7 @@ export default class App extends Component {
         <Route path="/success" component={success}></Route>
         <Route path="/Sreport" exact component={stdReport} />
         <Route path="/addSal" exact component={Teachersaladd} />
+        <Route path="/teacherDetails" exact component={TeacherDetails} />
     
       </div>
       </BrowserRouter>
