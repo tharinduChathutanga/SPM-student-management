@@ -7,8 +7,13 @@ const app = express();
 //import routes
 const postClass = require('./routes/classRoutes');
 const stdpayment = require('./routes/student_pay_R.js');
+
+const router = require("./routes/examTimeTable_routes");
+
+
 const teachsal = require('./routes/teacher_sal_route.js');
 const postNotice = require('./routes/noticeRoutes');
+
 
 //app middleware
 app.use(bodyParser.json());
@@ -17,8 +22,12 @@ app.use(cors());
 //route middleware
 app.use(postClass);
 app.use(stdpayment);
+
+app.use("/timetables", router);
+
 app.use(teachsal);
 app.use(postNotice);
+
 
 const PORT = 8000;
 const DB_URL = "mongodb+srv://user:user@cluster0.odqhx.mongodb.net/?retryWrites=true&w=majority";
