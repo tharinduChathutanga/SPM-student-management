@@ -18,6 +18,7 @@ import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
 import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 
 import Teachersaladd from './components/TeacherSalAdd.js';
+import TeacherDetails from './components/TeacherSalDetails.js';
 
 
 
@@ -27,6 +28,7 @@ export default class App extends Component {
       <BrowserRouter>
       <div classname ="container">
 
+    {/* Supi */}
         <Route path = "/" exact component = {classHome}></Route>
         <Route path = "/add" exact component = {createClass}></Route>
         <Route path = "/edit/:id" exact component = {editClass}></Route>
@@ -50,8 +52,13 @@ export default class App extends Component {
 
 
         <Route path="/addSal" exact component={Teachersaladd} />
+ Teacher-salary-management
+        <Route path="/teacherDetails" exact component={TeacherDetails} />
+    
+
 
    
+ main
       </div>
       </BrowserRouter>
       
