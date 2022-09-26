@@ -12,8 +12,14 @@ import stdUpdate from './components/StdpayUpdate.js';
 import stdDe from './components/StdpayD.js';
 import maill from './components/stpMail.js';
 import success from './components/StdpaySuccess.js';
+
+import TimeTables from './components/Exam Time Table/TimeTables';
+import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
+import EditTimeTable from './components/Exam Time Table/EditTimeTable';
+
 import Teachersaladd from './components/TeacherSalAdd.js';
 import TeacherDetails from './components/TeacherSalDetails.js';
+
 
 
 export default class App extends Component {
@@ -36,9 +42,23 @@ export default class App extends Component {
         <Route path="/mail" exact component={maill} />
         <Route path="/success" component={success}></Route>
         <Route path="/Sreport" exact component={stdReport} />
+
+
+        <Route path="/timetables" exact component={TimeTables}></Route>
+        <Route path="/timetables/add" component={CreateTimeTable}></Route>
+        <Route path="/timetables/update/:id" component={EditTimeTable}></Route>
+        
+
+
+
         <Route path="/addSal" exact component={Teachersaladd} />
+ Teacher-salary-management
         <Route path="/teacherDetails" exact component={TeacherDetails} />
     
+
+
+   
+ main
       </div>
       </BrowserRouter>
       
