@@ -83,7 +83,7 @@ export default class ExamResults extends Component {
   //New document in jspdf
   var doc = new jsPdf('l', 'pt', 'a3');
 
-  doc.text(600, 20, 'Exam Results', { align: 'center' },);
+  doc.text(600, 20, 'Exam Results for Science - Grade 10', { align: 'center' },);
   doc.autoTable({ html: '#class-table' })
 
   doc.autoTable({
