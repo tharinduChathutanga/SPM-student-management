@@ -20,6 +20,7 @@ import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 import Teachersaladd from './components/TeacherSalAdd.js';
 import ExamResults from './components/Exam Results/ExamResults';
 import createExamResults from './components/Exam Results/CreateExamResults';
+import EditExamResults from './components/Exam Results/EditExamResults';
 
 
 
@@ -50,6 +51,7 @@ export default class App extends Component {
         
         <Route path="/results" exact component={ExamResults}></Route>
         <Route path="/result/add" exact component={createExamResults}></Route>
+        <Route path="/result/update/:id" exact component={EditExamResults}></Route>
 
 
         <Route path="/addSal" exact component={Teachersaladd} />

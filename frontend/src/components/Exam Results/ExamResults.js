@@ -167,7 +167,7 @@ export default class ExamResults extends Component {
                 <td>{results.gradeReceived}</td>
                 <a
                   className="btn btn-warning"
-                  href={`results/update/${results._id}`}
+                  href={`result/update/${results._id}`}
                 >
                   <i className="fas fa-edit"> </i>&nbsp; Edit
                 </a>
