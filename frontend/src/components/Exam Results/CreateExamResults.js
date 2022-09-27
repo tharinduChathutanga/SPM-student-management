@@ -122,7 +122,7 @@ export default class createExamResults extends Component {
                         <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Grade:</b></label>
                         <select
                       className="form-control"
-                      style ={{marginBottom:'15px', maxWidth:'500px'}}
+                      style ={{marginBottom:'15px', maxWidth:'580px'}}
                       name="grade"
                       placeholder="Select Grade"
                       value={this.state.grade}
@@ -133,19 +133,29 @@ export default class createExamResults extends Component {
                       <option value = "10">10</option>
                       <option value = "11">11</option> </select>
                       </div>
+
+                      <div className="form-group" style={{ marginBottom: '15px' }}>
+                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Subject:</b></label>
+                        <select
+                      className="form-control"
+                      style ={{marginBottom:'15px', maxWidth:'580px'}}
+                      name="subject"
+                      placeholder="Select Subject"
+                      value={this.state.subject}
+                      onChange={this.handleInputChange}
+                      required
+                    >
+                      <option value = "Select Subject">Select</option>
+                      <option value = "Science">Science</option>
+                      <option value = "Maths">Maths</option> 
+                      <option value = "English">English</option> 
+                      <option value = "Sinhala">Sinhala</option> 
+                      <option value = "History">History</option> 
+                      <option value = "Commerce">Commerce</option> 
+                      </select>
+                      </div>
               
             
-            <label style={{ marginBottom: '5px',fontSize:'19px' }} for="exampleInputEmail1"><b>Subject:</b></label>
-            <input
-              type="text"
-              class="form-control"
-              name="subject"
-              aria-describedby="emailHelp"
-              placeholder="Science"
-              value={this.state.subject}
-              onChange={this.handleInputChange}
-              required
-            />
           </div>
           <div className="form-group">
             <label style={{ marginBottom: '5px',fontSize:'19px' }} for="exampleInputPassword1"><b>Student Name:</b></label>
@@ -187,18 +197,25 @@ export default class createExamResults extends Component {
               required
             />
           </div>
-          <div className="form-group">
-            <label style={{ marginBottom: '5px',fontSize:'19px' }} for="exampleInputPassword1"><b>Grade Received:</b></label>
-            <input
-              type="text"
-              className="form-control"
-              name="gradeReceived"
-              placeholder="A"
-              value={this.state.gradeReceived}
-              onChange={this.handleInputChange}
-              required
-            />
-          </div>
+          <div className="form-group" style={{ marginBottom: '15px' }}>
+                        <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Grade Received:</b></label>
+                        <select
+                      className="form-control"
+                      style ={{marginBottom:'15px', maxWidth:'580px'}}
+                      name="gradeReceived"
+                      placeholder="Select Grade"
+                      value={this.state.gradeReceived}
+                      onChange={this.handleInputChange}
+                      required
+                    >
+                      <option value = "Select">Select</option>
+                      <option value = "A">A</option>
+                      <option value = "B">B</option>
+                      <option value = "C">C</option>
+                      <option value = "S">S</option>
+                      <option value = "F">F</option> 
+                      </select>
+                      </div>
           
           </div>
           <br></br>
