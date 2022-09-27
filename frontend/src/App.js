@@ -19,6 +19,7 @@ import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 
 import Teachersaladd from './components/TeacherSalAdd.js';
 import ExamResults from './components/Exam Results/ExamResults';
+import createExamResults from './components/Exam Results/CreateExamResults';
 
 
 
@@ -48,6 +49,7 @@ export default class App extends Component {
         <Route path="/timetables/update/:id" component={EditTimeTable}></Route>
         
         <Route path="/results" exact component={ExamResults}></Route>
+        <Route path="/result/add" exact component={createExamResults}></Route>
 
 
         <Route path="/addSal" exact component={Teachersaladd} />
