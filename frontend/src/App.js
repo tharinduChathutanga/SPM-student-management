@@ -16,6 +16,7 @@ import success from './components/StdpaySuccess.js';
 import TimeTables from './components/Exam Time Table/TimeTables';
 import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
 import EditTimeTable from './components/Exam Time Table/EditTimeTable';
+import TimeTableReport from './components/Exam Time Table/TimeTableReport';
 
 import Teachersaladd from './components/TeacherSalAdd.js';
 import ExamResults from './components/Exam Results/ExamResults';
@@ -48,10 +49,12 @@ export default class App extends Component {
         <Route path="/timetables" exact component={TimeTables}></Route>
         <Route path="/timetables/add" component={CreateTimeTable}></Route>
         <Route path="/timetables/update/:id" component={EditTimeTable}></Route>
+        <Route path="/timetablesReport" exact component={TimeTableReport}></Route>
         
         <Route path="/results" exact component={ExamResults}></Route>
         <Route path="/result/add" exact component={createExamResults}></Route>
         <Route path="/result/update/:id" exact component={EditExamResults}></Route>
+        
 
 
         <Route path="/addSal" exact component={Teachersaladd} />
