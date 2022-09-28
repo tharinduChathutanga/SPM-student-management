@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Route} from 'react-router-dom';
+
+//Supi
+//Class Management Function
 import createClass from './components/createClass';
 import classHome from './components/classHome';
 import editClass from './components/editClass';
 import classTeacherEmailer from './components/classTeacherEmailer';
 import classDetailsReport from './components/classDetailsReport';
+
+//Notice Management Function
+import createNotice from './components/Notices/createNotice';
 
 
 // shamali
