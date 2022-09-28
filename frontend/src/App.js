@@ -18,10 +18,13 @@ import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
 import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 import TimeTableReport from './components/Exam Time Table/TimeTableReport';
 
-import Teachersaladd from './components/TeacherSalAdd.js';
 import ExamResults from './components/Exam Results/ExamResults';
 import createExamResults from './components/Exam Results/CreateExamResults';
 import EditExamResults from './components/Exam Results/EditExamResults';
+import ExamResultsReport from './components/Exam Results/ExamResultsReport';
+
+import Teachersaladd from './components/TeacherSalAdd.js';
+
 
 
 
@@ -54,6 +57,7 @@ export default class App extends Component {
         <Route path="/results" exact component={ExamResults}></Route>
         <Route path="/result/add" exact component={createExamResults}></Route>
         <Route path="/result/update/:id" exact component={EditExamResults}></Route>
+        <Route path="/resultsReport" exact component={ExamResultsReport}></Route>
         
 
 
