@@ -11,7 +11,7 @@ import classDetailsReport from './components/classDetailsReport';
 
 //Notice Management Function
 import createNotice from './components/Notices/createNotice';
-
+import noticeHome from './components/Notices/noticeHome';
 
 // shamali
 // student payment
