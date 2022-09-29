@@ -27,6 +27,8 @@ export default class classNotice extends Component {
     });
   }
 
+  //Delete operation of notices
+
   onDelete = (id) => {
 
     swal({
@@ -50,6 +52,8 @@ export default class classNotice extends Component {
         }
       });
   }
+
+  //Search Operation of notices
 
   filterData(posts, searchKey) {
     const result = posts.filter((post) =>
@@ -128,14 +132,14 @@ export default class classNotice extends Component {
           </tbody>
         </table>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a className="btn btn-success" style={{ marginTop: '15px', backgroundColor: '#035740'  }} href={`/addnotice`}> 
+        <a className="btn btn-success" style={{ marginTop: '15px', backgroundColor: '#035740' }} href={`/addnotice`}>
           <i className="fas fa-pencil-alt"></i>&nbsp;ADD NEW NOTICE
         </a>
-        
+
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <a className="btn btn-primary" style={{ marginTop: '15px', backgroundColor: '#000080' }} href={`/noticeReport`}> 
-        <i className="fas fa-download"></i>&nbsp;Go To Report
+        <a className="btn btn-primary" style={{ marginTop: '15px', backgroundColor: '#000080' }} href={`/noticeReport`}>
+          <i className="fas fa-download"></i>&nbsp;Go To Report
         </a>
 
       </div>
