@@ -12,7 +12,7 @@ import classDetailsReport from './components/classDetailsReport';
 //Notice Management Function
 import createNotice from './components/Notices/createNotice';
 import noticeHome from './components/Notices/noticeHome';
-import editnotice from './components/Notices/editNotice';
+import editNotice from './components/Notices/editNotice';
 
 // shamali
 // student payment
@@ -51,6 +51,10 @@ export default class App extends Component {
         <Route path = "/edit/:id" exact component = {editClass}></Route>
         <Route path="/email" exact component={classTeacherEmailer}></Route>
         <Route path="/classReport" exact component={classDetailsReport}></Route>
+
+        <Route path = "/fetchNotice" exact component = {noticeHome}></Route>
+        <Route path = "/addnotice" exact component = {createNotice}></Route>
+        <Route path = "/editnotice/:id" exact component = {editNotice}></Route>
         
    {/* shamali */}
         <Route path="/payadd" exact component={stdpay} />
