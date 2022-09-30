@@ -73,21 +73,14 @@ export default class createNotice extends Component {
                                 this.setState(
                                     {
                                         noticeType: "",
-                                        subjectCode: "",
-                                        grade: "",
-                                        teacherName: "",
-                                        classType: "",
-                                        hallNo: "",
-                                        startDate: "",
-                                        time: ""
-
+                                        noticeDate: "",
+                                        noticeTitle: "",
+                                        noticeBody: ""
                                     }
-
                                 )
-
                             }
                         });
-                        swal("Notices Added Successfully!", {
+                        swal("Notice Added Successfully!", {
                             icon: "success",
                         });
                     } else {
