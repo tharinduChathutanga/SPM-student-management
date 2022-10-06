@@ -21,6 +21,7 @@ import success from './components/StudentPayment/StdpaySuccess.js';
 import Teachersaladd from './components/TeacherSalay/TeacherSalAdd.js';
 import TeacherDetails from './components/TeacherSalay/TeacherSalDetails.js';
 import TeacherpayUpdate from './components/TeacherSalay/TeachSalUpdate.js';
+import TeacherSalaryReport from './components/TeacherSalay/SalaryReport.js';
 
 
 //shonali
@@ -55,6 +56,7 @@ export default class App extends Component {
         <Route path="/TeachpayAdd" component={Teachersaladd}></Route>
         <Route path="/TeacherSalDetails" exact component={TeacherDetails} />
         <Route path="/TeacherSalUpdate" exact component={TeacherpayUpdate} />
+        <Route path="/SalaryReport" exact component={TeacherSalaryReport} />
 
 
 {/* Shonali */}
