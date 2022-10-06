@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Route} from 'react-router-dom';
+
+//Supi
+//Class Management Function
 import createClass from './components/createClass';
 import classHome from './components/classHome';
 import editClass from './components/editClass';
 import classTeacherEmailer from './components/classTeacherEmailer';
 import classDetailsReport from './components/classDetailsReport';
 
+//Notice Management Function
+import createNotice from './components/Notices/createNotice';
+import noticeHome from './components/Notices/noticeHome';
+import editNotice from './components/Notices/editNotice';
 
 
 // shamali
@@ -45,6 +52,10 @@ export default class App extends Component {
         <Route path = "/edit/:id" exact component = {editClass}></Route>
         <Route path="/email" exact component={classTeacherEmailer}></Route>
         <Route path="/classReport" exact component={classDetailsReport}></Route>
+
+        <Route path = "/fetchNotice" exact component = {noticeHome}></Route>
+        <Route path = "/addnotice" exact component = {createNotice}></Route>
+        <Route path = "/editnotice/:id" exact component = {editNotice}></Route>
         
    {/* shamali */}
         <Route path="/payadd" exact component={stdpay} />
