@@ -128,7 +128,7 @@ export default class classHome extends Component {
 
                 <td>
 
-                  <a className="btn btn-warning" href={`/edit/${posts._id}`}>
+                  <a className="btn btn-warning" href={`/editClass/${posts._id}`}>
                     <i className="fas fa-edit"></i>&nbsp;EDIT
                   </a>
                   &nbsp;
@@ -141,7 +141,7 @@ export default class classHome extends Component {
           </tbody>
         </table>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a className="btn btn-success" style={{ marginTop: '15px', backgroundColor: '#035740'  }} href={`/add`}> 
+        <a className="btn btn-success" style={{ marginTop: '15px', backgroundColor: '#035740'  }} href={`/addClass`}> 
           <i className="fas fa-pencil-alt"></i>&nbsp;ADD NEW CLASS
         </a>
         

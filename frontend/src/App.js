@@ -3,11 +3,11 @@ import {BrowserRouter,Route} from 'react-router-dom';
 
 //Supi
 //Class Management Function
-import createClass from './components/createClass';
-import classHome from './components/classHome';
-import editClass from './components/editClass';
-import classTeacherEmailer from './components/classTeacherEmailer';
-import classDetailsReport from './components/classDetailsReport';
+import createClass from './components/Classes/createClass';
+import classHome from './components/Classes/classHome';
+import editClass from './components/Classes/editClass';
+import classTeacherEmailer from './components/Classes/classTeacherEmailer';
+import classDetailsReport from './components/Classes/classDetailsReport';
 
 //Notice Management Function
 import createNotice from './components/Notices/createNotice';
@@ -37,8 +37,6 @@ import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
 import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 
 
-
-
 export default class App extends Component {
   render() {
     return (
@@ -46,10 +44,10 @@ export default class App extends Component {
       <div classname ="container">
 
     {/* Supi - IT20153236 */}
-        <Route path = "/" exact component = {classHome}></Route>
-        <Route path = "/add" exact component = {createClass}></Route>
-        <Route path = "/edit/:id" exact component = {editClass}></Route>
-        <Route path="/email" exact component={classTeacherEmailer}></Route>
+        <Route path = "/classHome" exact component = {classHome}></Route>
+        <Route path = "/addClass" exact component = {createClass}></Route>
+        <Route path = "/editClass/:id" exact component = {editClass}></Route>
+        <Route path="/emailTeacher" exact component={classTeacherEmailer}></Route>
         <Route path="/classReport" exact component={classDetailsReport}></Route>
 
         <Route path = "/fetchNotice" exact component = {noticeHome}></Route>
