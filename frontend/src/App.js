@@ -13,7 +13,7 @@ import classDetailsReport from './components/classDetailsReport';
 import createNotice from './components/Notices/createNotice';
 import noticeHome from './components/Notices/noticeHome';
 import editNotice from './components/Notices/editNotice';
-
+import noticeReport from './components/Notices/noticeReport';
 
 // shamali
 // student payment
@@ -45,7 +45,7 @@ export default class App extends Component {
       <BrowserRouter>
       <div classname ="container">
 
-    {/* Supi */}
+    {/* Supi - IT20153236 */}
         <Route path = "/" exact component = {classHome}></Route>
         <Route path = "/add" exact component = {createClass}></Route>
         <Route path = "/edit/:id" exact component = {editClass}></Route>
@@ -55,6 +55,7 @@ export default class App extends Component {
         <Route path = "/fetchNotice" exact component = {noticeHome}></Route>
         <Route path = "/addnotice" exact component = {createNotice}></Route>
         <Route path = "/editnotice/:id" exact component = {editNotice}></Route>
+        <Route path = "/noticeReport" exact component={noticeReport}></Route>
         
    {/* shamali */}
         <Route path="/payadd" exact component={stdpay} />
