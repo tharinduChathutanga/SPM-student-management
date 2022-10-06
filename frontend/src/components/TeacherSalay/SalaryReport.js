@@ -5,6 +5,7 @@ import jsPdf from 'jspdf';
 import 'jspdf-autotable';
 
 
+
 class SalaryReport extends Component {
 
     constructor(props) {

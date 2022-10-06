@@ -16,7 +16,6 @@ import stdUpdate from './components/StudentPayment/StdpayUpdate.js';
 import maill from './components/StudentPayment/stpMail.js';
 import success from './components/StudentPayment/StdpaySuccess.js';
 
-
 //Teacher payment - shamali
 import Teachersaladd from './components/TeacherSalay/TeacherSalAdd.js';
 import TeacherDetails from './components/TeacherSalay/TeacherSalDetails.js';
