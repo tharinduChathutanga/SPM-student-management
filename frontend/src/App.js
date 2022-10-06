@@ -39,7 +39,6 @@ import EditTimeTable from './components/Exam Time Table/EditTimeTable';
 
 
 
-
 export default class App extends Component {
   render() {
     return (

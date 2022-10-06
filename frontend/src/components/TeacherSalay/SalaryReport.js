@@ -21,7 +21,6 @@ class SalaryReport extends Component {
         this.retrievePosts();
     }
 
-
     retrievePosts() {
         axios.get("http://localhost:8000/teacsal").then(res => {
             console.log("hello3");
