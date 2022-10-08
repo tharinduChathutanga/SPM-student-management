@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-import BG from '../../images/r2giphy.gif';
+import BG from '../../images/n2giphy.gif';
 
 export default class createNotice extends Component {
 
@@ -95,19 +95,19 @@ export default class createNotice extends Component {
 
         //setState
         this.setState({
-            noticeType: "General Notice"
+            noticeType: "Subject Related Notice"
         })
 
         this.setState({
-            noticeDate: "27/09/2022"
+            noticeDate: "10/10/2022"
         })
 
         this.setState({
-            noticeTitle: ""
+            noticeTitle: "Re-scheduling the cancelled Enlish class on Sunday"
         })
 
         this.setState({
-            noticeBody: ""
+            noticeBody: "Last week's cancelled English class which is normally held on Thursday 2.30 pm to 5.30 pm will be re-scheduled to next Sunday 2.30pm - 5.30 pm."
         })
 
     }
@@ -123,13 +123,13 @@ export default class createNotice extends Component {
                                     <div className="Jumbotron jumbotron-fluid">
                                         <div className="container hire">
                                             <br />
-                                            <marquee direction="left"><p className="display-3 " style={{ color: '#8b4513' }}><b>Enter New Class Details Here !</b></p></marquee>
+                                            <marquee direction="left"><p className="display-3 " style={{ color: '#8b4513' }}><b>Add New Notices Here !</b></p></marquee>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <img className="r2giphy.gif" src={BG} alt='bg img' style={{ width: "75%", height: "50%", marginTop: "100px", marginLeft: "140px" }} />
+                        <img className="n2giphy.gif" src={BG} alt='bg img' style={{ width: "80%", height: "50%", marginTop: "50px", marginLeft: "140px" }} />
                     </div>
 
                     <div className="col-6">
@@ -142,7 +142,7 @@ export default class createNotice extends Component {
                                         <h1 className="text-center topic" style={{ color: '#00008b' }}>Add Notices</h1>
                                         <br></br>
 
-                                        <form className="needs-validation" align="center" style={{ width: "110%", borderStyle: "solid", borderWidth: "5px", boxShadow: "0 8px 350px 0 rgba(0, 0, 0, 0.5)", alignContent: "center", borderColor: "navy" }} noValidate >
+                                        <form className="needs-validation" align="center" style={{ width: "120%", borderStyle: "solid", borderWidth: "5px", boxShadow: "0 8px 350px 0 rgba(0, 0, 0, 0.5)", alignContent: "center", borderColor: "navy" }} noValidate >
 
                                             <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
                                                 <label style={{ marginBottom: '5px', fontSize: '19px' }} className="topic"><b>Notice Type:</b></label>
