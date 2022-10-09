@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-import BG from '../images/r2giphy.gif';
+import BG from '../../images/r2giphy.gif';
 
 export default class createClass extends Component {
 
@@ -283,11 +283,11 @@ export default class createClass extends Component {
                       </button>
 
                       <br />
-                      <button className="btn btn-outline-success" type="submit" style={{ marginTop: '15px', backgroundColor: '#410061' }} ><a href="/email"> 
+                      <button className="btn btn-outline-success" type="submit" style={{ marginTop: '15px', backgroundColor: '#410061' }} ><a href="/emailTeacher"> 
                         Inform Teachers Via An Email</a></button>
 
                         <br />
-                      <button className="btn btn-outline-warning" type="submit" style={{ marginTop: '15px' }} ><a href="/"> <i className="far fa-check-square" style={{ textDecoration: "none" }}></i>
+                      <button className="btn btn-outline-warning" type="submit" style={{ marginTop: '15px' }} ><a href="/classHome"> <i className="far fa-check-square" style={{ textDecoration: "none" }}></i>
                         &nbsp; View Class Table</a></button>
 
                     </form>
