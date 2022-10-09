@@ -9,6 +9,7 @@ const postClass = require('./routes/classRoutes');
 const stdpayment = require('./routes/student_pay_R.js');
 
 const router = require("./routes/examTimeTable_routes");
+const result = require("./routes/examResults_routes");
 
 
 const teachsal = require('./routes/teacher_sal_route.js');
@@ -24,6 +25,7 @@ app.use(postClass);
 app.use(stdpayment);
 
 app.use("/timetables", router);
+app.use(result);
 
 app.use(teachsal);
 app.use(postNotice);

@@ -35,6 +35,13 @@ import TeacherSalaryReport from './components/TeacherSalay/SalaryReport.js';
 import TimeTables from './components/Exam Time Table/TimeTables';
 import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
 import EditTimeTable from './components/Exam Time Table/EditTimeTable';
+import TimeTableReport from './components/Exam Time Table/TimeTableReport';
+
+import ExamResults from './components/Exam Results/ExamResults';
+import createExamResults from './components/Exam Results/CreateExamResults';
+import EditExamResults from './components/Exam Results/EditExamResults';
+import ExamResultsReport from './components/Exam Results/ExamResultsReport';
+
 
 
 export default class App extends Component {
@@ -72,8 +79,13 @@ export default class App extends Component {
         <Route path="/timetables" exact component={TimeTables}></Route>
         <Route path="/timetables/add" component={CreateTimeTable}></Route>
         <Route path="/timetables/update/:id" component={EditTimeTable}></Route>
+        <Route path="/timetablesReport" exact component={TimeTableReport}></Route>
         
-    
+        <Route path="/results" exact component={ExamResults}></Route>
+        <Route path="/result/add" exact component={createExamResults}></Route>
+        <Route path="/result/update/:id" exact component={EditExamResults}></Route>
+        <Route path="/resultsReport" exact component={ExamResultsReport}></Route>
+        
 
 
    
