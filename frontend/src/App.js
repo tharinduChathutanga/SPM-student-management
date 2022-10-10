@@ -26,6 +26,13 @@ import stdUpdate from './component/StudentPayment/StdpayUpdate.js';
 import maill from './component/StudentPayment/stpMail.js';
 import success from './component/StudentPayment/StdpaySuccess.js';
 
+teacher-salary-dilrukshi
+//Teacher payment - shamali
+import Teachersaladd from './component/TeacherSalay/TeacherSalAdd.js';
+import TeacherDetails from './component/TeacherSalay/TeacherSalDetails.js';
+import TeacherpayUpdate from './component/TeacherSalay/TeachSalUpdate.js';
+import TeacherSalaryReport from './component/TeacherSalay/SalaryReport.js';
+
 //Supi
 //Class Management Function
 import createClass from './components/Classes/createClass';
@@ -40,6 +47,7 @@ import noticeHome from './components/Notices/noticeHome';
 import editNotice from './components/Notices/editNotice';
 import noticeReport from './components/Notices/noticeReport';
 
+ 
 
 
 function App() {
@@ -77,6 +85,11 @@ function App() {
         <Route path="/mail" exact component={maill} />
         <Route path="/success" component={success}></Route>
         <Route path="/Sreport" exact component={stdReport} />
+        <Route path="/TeachpayAdd" component={Teachersaladd}></Route>
+        <Route path="/TeacherSalDetails" exact component={TeacherDetails} />
+        <Route path="/TeacherSalUpdate" exact component={TeacherpayUpdate} />
+        <Route path="/SalaryReport" exact component={TeacherSalaryReport} />
+
      
       {/* Supi - IT20153236 */}
       <Route path = "/classHome" exact component = {classHome}></Route>
