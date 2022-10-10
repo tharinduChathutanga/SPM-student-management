@@ -26,6 +26,19 @@ import stdUpdate from './component/StudentPayment/StdpayUpdate.js';
 import maill from './component/StudentPayment/stpMail.js';
 import success from './component/StudentPayment/StdpaySuccess.js';
 
+//Supi
+//Class Management Function
+import createClass from './components/Classes/createClass';
+import classHome from './components/Classes/classHome';
+import editClass from './components/Classes/editClass';
+import classTeacherEmailer from './components/Classes/classTeacherEmailer';
+import classDetailsReport from './components/Classes/classDetailsReport';
+
+//Notice Management Function
+import createNotice from './components/Notices/createNotice';
+import noticeHome from './components/Notices/noticeHome';
+import editNotice from './components/Notices/editNotice';
+import noticeReport from './components/Notices/noticeReport';
 
 
 
@@ -65,6 +78,17 @@ function App() {
         <Route path="/success" component={success}></Route>
         <Route path="/Sreport" exact component={stdReport} />
      
+      {/* Supi - IT20153236 */}
+      <Route path = "/classHome" exact component = {classHome}></Route>
+        <Route path = "/addClass" exact component = {createClass}></Route>
+        <Route path = "/editClass/:id" exact component = {editClass}></Route>
+        <Route path="/emailTeacher" exact component={classTeacherEmailer}></Route>
+        <Route path="/classReport" exact component={classDetailsReport}></Route>
+
+        <Route path = "/fetchNotice" exact component = {noticeHome}></Route>
+        <Route path = "/addnotice" exact component = {createNotice}></Route>
+        <Route path = "/editnotice/:id" exact component = {editNotice}></Route>
+        <Route path = "/noticeReport" exact component={noticeReport}></Route>     
 
       <Footer />
     </Router>
