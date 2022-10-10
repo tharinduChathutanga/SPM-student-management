@@ -26,6 +26,7 @@ import stdUpdate from './component/StudentPayment/StdpayUpdate.js';
 import maill from './component/StudentPayment/stpMail.js';
 import success from './component/StudentPayment/StdpaySuccess.js';
 
+
 import TimeTables from './components/Exam Time Table/TimeTables';
 import CreateTimeTable from './components/Exam Time Table/CreateTimeTable';
 import EditTimeTable from './components/Exam Time Table/EditTimeTable';
@@ -37,6 +38,29 @@ import EditExamResults from './components/Exam Results/EditExamResults';
 import ExamResultsReport from './components/Exam Results/ExamResultsReport';
 
 
+teacher-salary-dilrukshi
+//Teacher payment - shamali
+import Teachersaladd from './component/TeacherSalay/TeacherSalAdd.js';
+import TeacherDetails from './component/TeacherSalay/TeacherSalDetails.js';
+import TeacherpayUpdate from './component/TeacherSalay/TeachSalUpdate.js';
+import TeacherSalaryReport from './component/TeacherSalay/SalaryReport.js';
+
+
+//Supi
+//Class Management Function
+import createClass from './components/Classes/createClass';
+import classHome from './components/Classes/classHome';
+import editClass from './components/Classes/editClass';
+import classTeacherEmailer from './components/Classes/classTeacherEmailer';
+import classDetailsReport from './components/Classes/classDetailsReport';
+
+//Notice Management Function
+import createNotice from './components/Notices/createNotice';
+import noticeHome from './components/Notices/noticeHome';
+import editNotice from './components/Notices/editNotice';
+import noticeReport from './components/Notices/noticeReport';
+
+ 
 
 
 function App() {
@@ -76,6 +100,7 @@ function App() {
         <Route path="/Sreport" exact component={stdReport} />
 
 
+
         <Route path="/timetables" exact component={TimeTables}></Route>
         <Route path="/timetables/add" component={CreateTimeTable}></Route>
         <Route path="/timetables/update/:id" component={EditTimeTable}></Route>
@@ -85,7 +110,25 @@ function App() {
         <Route path="/result/add" exact component={createExamResults}></Route>
         <Route path="/result/update/:id" exact component={EditExamResults}></Route>
         <Route path="/resultsReport" exact component={ExamResultsReport}></Route>
+
+        <Route path="/TeachpayAdd" component={Teachersaladd}></Route>
+        <Route path="/TeacherSalDetails" exact component={TeacherDetails} />
+        <Route path="/TeacherSalUpdate" exact component={TeacherpayUpdate} />
+        <Route path="/SalaryReport" exact component={TeacherSalaryReport} />
+
+
      
+      {/* Supi - IT20153236 */}
+      <Route path = "/classHome" exact component = {classHome}></Route>
+        <Route path = "/addClass" exact component = {createClass}></Route>
+        <Route path = "/editClass/:id" exact component = {editClass}></Route>
+        <Route path="/emailTeacher" exact component={classTeacherEmailer}></Route>
+        <Route path="/classReport" exact component={classDetailsReport}></Route>
+
+        <Route path = "/fetchNotice" exact component = {noticeHome}></Route>
+        <Route path = "/addnotice" exact component = {createNotice}></Route>
+        <Route path = "/editnotice/:id" exact component = {editNotice}></Route>
+        <Route path = "/noticeReport" exact component={noticeReport}></Route>     
 
       <Footer />
     </Router>
