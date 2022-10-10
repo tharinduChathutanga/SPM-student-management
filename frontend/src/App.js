@@ -26,7 +26,11 @@ import stdUpdate from './component/StudentPayment/StdpayUpdate.js';
 import maill from './component/StudentPayment/stpMail.js';
 import success from './component/StudentPayment/StdpaySuccess.js';
 
-
+//Teacher payment - shamali
+import Teachersaladd from './component/TeacherSalay/TeacherSalAdd.js';
+import TeacherDetails from './component/TeacherSalay/TeacherSalDetails.js';
+import TeacherpayUpdate from './component/TeacherSalay/TeachSalUpdate.js';
+import TeacherSalaryReport from './component/TeacherSalay/SalaryReport.js';
 
 
 function App() {
@@ -64,6 +68,11 @@ function App() {
         <Route path="/mail" exact component={maill} />
         <Route path="/success" component={success}></Route>
         <Route path="/Sreport" exact component={stdReport} />
+        <Route path="/TeachpayAdd" component={Teachersaladd}></Route>
+        <Route path="/TeacherSalDetails" exact component={TeacherDetails} />
+        <Route path="/TeacherSalUpdate" exact component={TeacherpayUpdate} />
+        <Route path="/SalaryReport" exact component={TeacherSalaryReport} />
+
      
 
       <Footer />
