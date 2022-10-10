@@ -24,15 +24,26 @@ const users = require("./controllers/usersController");
 const studentpayment = require("./routes/student_pay_R.js");
 const teachSal = require("./routes/teacher_sal_route.js");
 
+
+const router = require("./routes/examTimeTable_routes");
+const result = require("./routes/examResults_routes");
+
 const postClass = require('./routes/classRoutes');
 const postNotice = require('./routes/noticeRoutes');
+
 
 app.use("/api/v1", user);
 app.use("/api/v1", users);
 app.use( studentpayment);
 app.use( teachSal);
+
+
+app.use("/timetables", router);
+app.use(result);
+
 app.use(postClass);
 app.use(postNotice);
+
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
