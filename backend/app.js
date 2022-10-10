@@ -21,11 +21,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const user = require("./routes/userRoute");
 const users = require("./controllers/usersController");
 
+const studentpayment = require("./routes/student_pay_R.js");
+const teachSal = require("./routes/teacher_sal_route.js");
+
 
 
 
 app.use("/api/v1", user);
 app.use("/api/v1", users);
+app.use( studentpayment);
+app.use( teachSal);
 
 
 

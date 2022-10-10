@@ -17,6 +17,18 @@ import usersHome from "./components/usersHome";
 import editUser from "./components/editUser";
 import Dashboard from "./component/Dashboard/Dashboard";
 
+// shamali
+// student payment
+import stdpay from './component/StudentPayment/StdpayAdd.js';
+import stdpayH from './component/StudentPayment/StdPayDetails.js';
+import stdReport from './component/StudentPayment/StdpayReport.js';
+import stdUpdate from './component/StudentPayment/StdpayUpdate.js';
+import maill from './component/StudentPayment/stpMail.js';
+import success from './component/StudentPayment/StdpaySuccess.js';
+
+
+
+
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -43,6 +55,16 @@ function App() {
       <Route path="/admin/users" exact component={usersHome}></Route>
       <Route path="/admin/edit/:id" exact component={editUser}></Route>
       <Route path="/admin/dashboard" exact component={Dashboard}></Route>
+
+
+      {/* shamali */}
+        <Route path="/payadd" exact component={stdpay} />
+        <Route path="/paydetails" exact component={stdpayH} />
+        <Route path="/StdUpdate/:id" exact component={stdUpdate} />
+        <Route path="/mail" exact component={maill} />
+        <Route path="/success" component={success}></Route>
+        <Route path="/Sreport" exact component={stdReport} />
+     
 
       <Footer />
     </Router>
