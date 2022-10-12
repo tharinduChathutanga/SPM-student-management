@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
 import swal from 'sweetalert';
@@ -22,7 +22,7 @@ class StdpayReport extends Component {
     }
 
     retrievePosts() {
-        axios.get("http://localhost:8000/stdpay").then(res => {
+        axios.get("http://localhost:5000/stdpay").then(res => {
 
             if (res.data.success) {
                 this.setState({
@@ -58,7 +58,7 @@ class StdpayReport extends Component {
 
         const searchKey = e.currentTarget.value;
 
-        axios.get("http://localhost:8000/stdpay").then(res => {
+        axios.get("http://localhost:5000/stdpay").then(res => {
 
             if (res.data.success) {
 

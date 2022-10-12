@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../action/axios";
 import swal from "sweetalert";
 
 export default class EditTimeTable extends Component {
@@ -70,7 +70,7 @@ export default class EditTimeTable extends Component {
         dangerMode: true,
       }).then((willDelete) => {
         if (willDelete) {
-          axios.put(`http://localhost:8000/timetables/update/${id}`, data).then((res) => {
+          axios.put(`http://localhost:5000/timetables/update/${id}`, data).then((res) => {
             if (res.data.success) {
               this.setState({
                 grade: "",
@@ -96,7 +96,7 @@ export default class EditTimeTable extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
 
-    axios.get(`http://localhost:8000/timetables/${id}`).then((res) => {
+    axios.get(`http://localhost:5000/timetables/${id}`).then((res) => {
       if (res.data.success) {
         this.setState({
           grade: res.data.timetable.grade,

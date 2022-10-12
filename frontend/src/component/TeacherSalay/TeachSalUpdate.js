@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import swal from 'sweetalert';
-import axios from 'axios';
+import axios from '../../action/axios';
 import BG from '../../images/teacher.gif';
 
 
@@ -86,7 +86,7 @@ class TeachSalUpdate extends Component {
                 .then((willDelete) => {
                     if (willDelete) {
 
-                        axios.put(`http://localhost:8000/teacsal/update/${id}`, data).then((res) => {
+                        axios.put(`http://localhost:5000/teacsal/update/${id}`, data).then((res) => {
 
                             if (res.data.success) {
 
@@ -127,7 +127,7 @@ class TeachSalUpdate extends Component {
         const id = this.props.match.params.id;
 
         //post/${id}/
-        axios.get(`http://localhost:8000/teacsal/${id}`).then((res) => {
+        axios.get(`http://localhost:5000/teacsal/${id}`).then((res) => {
             if (res.data.success) {
 
 

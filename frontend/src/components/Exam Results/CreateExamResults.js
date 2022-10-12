@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../action/axios";
 import swal from "sweetalert";
 
 export default class createExamResults extends Component {
@@ -74,7 +74,7 @@ export default class createExamResults extends Component {
         dangerMode: true,
       }).then((willDelete) => {
         if (willDelete) {
-          axios.post("http://localhost:8000/result/add", data).then((res) => {
+          axios.post("http://localhost:5000/result/add", data).then((res) => {
             if (res.data.success) {
               this.setState({
                 grade: "",

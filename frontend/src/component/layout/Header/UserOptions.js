@@ -20,6 +20,19 @@ import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import AssignmetReturnedIcon from "@mui/icons-material/AssignmentReturned";
+import PaymentIcon from '@mui/icons-material/Payment';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import PeopleIcon from '@mui/icons-material/People';
+import TableChartOutlinedIcon from '@mui/icons-material/TableChartOutlined';
+import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
+import AssignmentReturnedIcon from '@mui/icons-material/AssignmentReturned';
+import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import ClassIcon from '@mui/icons-material/Class';
+import NotificationAddIcon from '@mui/icons-material/NotificationAdd';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 const UserOptions = ({ user }) => {
   const [open, setOpen] = useState(false);
@@ -35,120 +48,164 @@ const UserOptions = ({ user }) => {
   if (user.role === "admin") {
     options.unshift(
       {
-        icon: <DashboardIcon />,
-        name: "Dashboard",
-        func: dashboard,
+        icon: <PaymentIcon />,
+        name: "Payment Details",
+        func: paydetails,
       },
       {
-        icon: <UploadFileIcon />,
-        name: "Upload Template",
-        func: template,
-      }
+        icon: <PaymentsIcon />,
+        name: "Teachers Payment Add",
+        func: TeachpayAdd,
+      },
+      {
+        icon: <ReceiptIcon />,
+        name: "Teacher SalDetails",
+        func: TeacherSalDetails,
+      },
+      {
+        icon: <PeopleIcon />,
+        name: "Users Details",
+        func: userdelails,
+      },
+      {
+        icon: <TableChartOutlinedIcon />,
+        name: "Exam Timetable",
+        func: timetables,
+      },
+      {
+        icon: <FormatListNumberedOutlinedIcon />,
+        name: "Exam Results",
+        func: results,
+      },
+      {
+        icon: <LibraryBooksIcon />,
+        name: "Add Class",
+        func: addClass,
+      },
+      {
+        icon: <ClassIcon />,
+        name: "Class Details",
+        func: classHome,
+      },
+      {
+        icon: <NotificationAddIcon />,
+        name: "Add Notice",
+        func: addnotice,
+      },
+      {
+        icon: <NotificationsIcon />,
+        name: "All Notices",
+        func: fetchNotice,
+      },
     );
   }
 
-  if (user.role === "staff") {
-    options.unshift(
-      {
-        icon: <BadgeIcon />,
-        name: "Add Supervisor",
-        func: addsup,
-      },
-      {
-        icon: <AssignmentIndIcon />,
-        name: "Add Co-Supervisor",
-        func: addCoSup,
-      }
-    );
-  }
-  if (user.role === "admin" || user.role === "staff") {
-    options.unshift(
-      {
-        icon: <PageviewIcon />,
-        name: "All Submitions",
-        func: allsubmitions,
-      },
-      {
-        icon: <AssignmentIcon />,
-        name: "Add Eveluation",
-        func: evalu,
-      }
-    );
-  }
+  
 
   if (user.role === "student") {
     options.unshift(
       {
-        icon: <PublishIcon />,
-        name: "Submit File",
-        func: submitform,
+        icon: <PaymentIcon />,
+        name: "Student Payment",
+        func: payadd,
       },
       {
-        icon: <AddTaskIcon />,
-        name: "Create Research Topic",
-        func: ctreatetopic,
+        icon: <CheckBoxIcon />,
+        name: "Student Payment Success",
+        func: success,
       },
       {
-        icon: <AppRegistrationIcon />,
-        name: "Co-Supervisor Research Field",
-        func: coSupervisorhome,
+        icon: <PaymentsIcon />,
+        name: "Student Payment Update",
+        func: stdpayupdate,
+      },
+      
+      {
+        icon: <TableChartOutlinedIcon />,
+        name: "Exam Timetable",
+        func: timetablesReport,
       },
       {
-        icon: <GroupAddIcon />,
-        name: "Register Groups",
-        func: stdgrpadd,
+        icon: <FormatListNumberedOutlinedIcon />,
+        name: "Exam Results",
+        func: resultsReport,
       },
       {
-        icon: <AssignmetReturnedIcon />,
-        name: "Topic Report",
-        func: topicsReport,
-      }
+        icon: <AssignmentReturnedIcon />,
+        name: "Class Details",
+        func: classReport,
+      },
+      {
+        icon: <MarkEmailUnreadIcon />,
+        name: "Notice Report",
+        func: noticeReport,
+      },
+      
+      
     );
   }
 
-  function dashboard() {
-    history.push("/admin/dashboard");
+  function payadd() {
+    history.push("/payadd");
   }
 
-  function topicsReport() {
-    history.push("/topicsReport");
+  function success() {
+    history.push("/success");
   }
 
-  function evalu() {
-    history.push("/evalu");
+  function stdpayupdate() {
+    history.push("/StdUpdate/:id");
   }
 
-  function stdgrpadd() {
-    history.push("/stdgrpadd");
+  function paydetails() {
+    history.push("/paydetails");
   }
 
-  function coSupervisorhome() {
-    history.push("/coSupervisorhome");
+
+  function TeachpayAdd() {
+    history.push("/TeachpayAdd");
+  }
+  function TeacherSalDetails() {
+    history.push("/TeacherSalDetails");
+  }
+  function userdelails() {
+    history.push("/admin/users");
   }
 
-  function addCoSup() {
-    history.push("/addCoSup");
+  function timetables() {
+    history.push("/timetables");
   }
-  function addsup() {
-    history.push("/addSup");
-  }
-  function ctreatetopic() {
-    history.push("/addresearchTopic");
-  }
-
-  function template() {
-    history.push("/admin/uploadT");
-  }
-  function allsubmitions() {
-    history.push("/staff/readSubmission");
+  function results() {
+    history.push("/results");
   }
 
   function account() {
     history.push("/account");
   }
 
-  function submitform() {
-    history.push("/submitform");
+  function timetablesReport() {
+    history.push("/timetablesReport");
+  }
+  function resultsReport() {
+    history.push("/resultsReport");
+  }
+  function classReport() {
+    history.push("/classReport");
+  }
+  function noticeReport() {
+    history.push("/noticeReport");
+  }
+  function addClass() {
+    history.push("/addClass");
+  }
+  function classHome() {
+    history.push("/classHome");
+  }
+  function addnotice() {
+    history.push("/addnotice");
+  }
+  function fetchNotice() {
+    history.push("/fetchNotice");
   }
 
   function logoutUser() {

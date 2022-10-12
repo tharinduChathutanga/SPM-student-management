@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import swal from "sweetalert";
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
@@ -22,7 +22,7 @@ class SalaryReport extends Component {
     }
 
     retrievePosts() {
-        axios.get("http://localhost:8000/teacsal").then(res => {
+        axios.get("http://localhost:5000/teacsal").then(res => {
             console.log("hello3");
             if (res.data.success) {
                 this.setState({
@@ -61,7 +61,7 @@ class SalaryReport extends Component {
 
         const searchKey = e.currentTarget.value;
 
-        axios.get("http://localhost:8000/teacsal").then(res => {
+        axios.get("http://localhost:5000/teacsal").then(res => {
 
             if (res.data.success) {
 

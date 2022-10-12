@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../action/axios";
 //import axios from "../../action/axios";
 import swal from "sweetalert";
 import jsPdf from 'jspdf';
@@ -19,7 +19,7 @@ export default class TimeTables extends Component {
   }
 
   retrieveTimeTables() {
-    axios.get("http://localhost:8000/timetables").then((res) => {
+    axios.get("http://localhost:5000/timetables").then((res) => {
       console.log("hello");
       if (res.data.success) {
         this.setState({
@@ -40,7 +40,7 @@ export default class TimeTables extends Component {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:8000/timetables/delete/${id}`).then((res) => {
+        axios.delete(`http://localhost:5000/timetables/delete/${id}`).then((res) => {
           swal(
             "Delete Successfully!",
             "Time Table Record details are removed",
@@ -70,7 +70,7 @@ export default class TimeTables extends Component {
   handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8000/timetables").then((res) => {
+    axios.get("http://localhost:5000/timetables").then((res) => {
       if (res.data.success) {
         this.filterData(res.data.existingtimetables, searchKey);
       }

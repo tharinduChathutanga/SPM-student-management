@@ -1,5 +1,5 @@
 import React ,{ Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
 

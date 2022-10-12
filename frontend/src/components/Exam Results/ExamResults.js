@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../action/axios";
 import swal from "sweetalert";
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
@@ -18,7 +18,7 @@ export default class ExamResults extends Component {
   }
 
   retrieveResults() {
-    axios.get("http://localhost:8000/results").then((res) => {
+    axios.get("http://localhost:5000/results").then((res) => {
       console.log("hello");
       if (res.data.success) {
         this.setState({
@@ -39,7 +39,7 @@ export default class ExamResults extends Component {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:8000/result/delete/${id}`).then((res) => {
+        axios.delete(`http://localhost:5000/result/delete/${id}`).then((res) => {
           swal(
             "Delete Successfully!",
             "Exam result is removed",
@@ -69,7 +69,7 @@ export default class ExamResults extends Component {
   handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8000/results").then((res) => {
+    axios.get("http://localhost:5000/results").then((res) => {
       if (res.data.success) {
         this.filterData(res.data.existingresults, searchKey);
       }

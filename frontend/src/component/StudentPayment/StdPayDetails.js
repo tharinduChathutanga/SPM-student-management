@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import swal from "sweetalert";
 //import "../Component/Stdp.css";
 
@@ -24,7 +24,7 @@ class StdPayDetails extends Component {
 
 
     retrievePosts() {
-        axios.get("http://localhost:8000/stdpay").then(res => {
+        axios.get("http://localhost:5000/stdpay").then(res => {
             console.log("hello3");
             if (res.data.success) {
                 this.setState({
@@ -49,7 +49,7 @@ class StdPayDetails extends Component {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:8000/stdpay/delete/${id}`).then((res) => {
+                    axios.delete(`http://localhost:5000/stdpay/delete/${id}`).then((res) => {
                         swal("Deleted Successful", "Student Payment Registration Details are removed", "success");
 
 
@@ -88,7 +88,7 @@ class StdPayDetails extends Component {
 
         const searchKey = e.currentTarget.value;
 
-        axios.get("http://localhost:8000/stdpay").then(res => {
+        axios.get("http://localhost:5000/stdpay").then(res => {
 
             if (res.data.success) {
 
