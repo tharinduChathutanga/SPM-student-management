@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import swal from 'sweetalert';
-import axios from 'axios';
+import axios from '../../action/axios';
 import BG from '../../images/S.gif';
 
 
@@ -101,7 +101,7 @@ class StdpayUpdate extends Component {
             .then((willDelete) => {
                 if (willDelete) {
 
-        axios.put(`http://localhost:8000/stdpay/update/${id}`, data).then((res) => {
+        axios.put(`http://localhost:5000/stdpay/update/${id}`, data).then((res) => {
 
             if (res.data.success) {
 
@@ -144,7 +144,7 @@ class StdpayUpdate extends Component {
         const id = this.props.match.params.id;
 
         //retrive one value from database 
-        axios.get(`http://localhost:8000/stdpay/${id}`).then((res) => {
+        axios.get(`http://localhost:5000/stdpay/${id}`).then((res) => {
             if (res.data.success) {
 
 

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="midFooter">
         <h1>නැණස</h1>
         <p>High Quality is our first priority</p>
-        <p>Copyrights 2022 &copy; SLIIT. All Rights Reserved.</p>
+        <p>Copyrights 2022 &copy; නැණස. All Rights Reserved.</p>
       </div>
     </footer>
   );

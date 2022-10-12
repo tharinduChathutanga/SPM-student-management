@@ -1,5 +1,5 @@
 .banner {
-  background-image: url("../../images/banner.jpg");
+  background-image: url("../../images/banner.png");
   background-position: center;
   background-repeat: no-repeat;
   height: 100vmin;
@@ -13,7 +13,7 @@
 
 .banner > h1 {
   margin: 5vmax;
-  color: #ffffff;
+  color: #000000;
   font: 600 2.5vmax "Roboto";
 }
 

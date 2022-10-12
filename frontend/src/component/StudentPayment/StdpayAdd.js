@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import swal from 'sweetalert';
 import BG from '../../images/S.gif';
 
@@ -90,7 +90,7 @@ export default class StdpayAdd extends Component {
             .then((willDelete) => {
                 if (willDelete) {
 
-                    axios.post("http://localhost:8000/stdpay/save", data).then((res) => {
+                    axios.post("http://localhost:5000/stdpay/save", data).then((res) => {
                         if (res.data.success) {
 
                             this.setState(
@@ -176,17 +176,17 @@ export default class StdpayAdd extends Component {
                                 </div>
                             </div>
                         </section>
-                        <img className="S.gif" src={BG} alt='bg img' style={{ width: "100%", height: "70%", marginTop: "50px", marginRight: "5px" }} />
+                        <img className="S.gif" src={BG} alt='bg img' style={{ width: "60%", marginTop: "50px", marginRight: "5px" }} />
 
 
                     </div>
 
                     <div class="col-6" style={{
-                        marginLeft: '40%',
+                        marginLeft: '20%',
                         width: '80%',
                     }}>
 
-                        <div style={{ marginTop: "-80%" }}>
+                        <div style={{ marginTop: "-30%" }}>
                             <div className="myformstyle" style={{ width: "140%", marginLeft: "10px" }}>
 
                                 <div className="card-body">
@@ -239,7 +239,7 @@ export default class StdpayAdd extends Component {
                                                     <input type="text"
                                                         className="form-control"
                                                         name="studentId"
-                                                        placeholder="STD********"
+                                                        placeholder="STD****"
                                                         value={this.state.studentId}
                                                         onChange={this.handleInputChange}
                                                         required

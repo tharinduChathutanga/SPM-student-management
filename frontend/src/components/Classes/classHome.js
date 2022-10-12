@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import swal from 'sweetalert';
 
 export default class classHome extends Component {

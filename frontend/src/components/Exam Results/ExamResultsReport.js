@@ -1,5 +1,5 @@
 import React ,{ Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
 
@@ -18,7 +18,7 @@ export default class ExamResultsReport extends Component {
         }
       
         retrieveResults() {
-          axios.get("http://localhost:8000/results").then((res) => {
+          axios.get("http://localhost:5000/results").then((res) => {
             console.log("hello");
             if (res.data.success) {
               this.setState({
@@ -47,7 +47,7 @@ export default class ExamResultsReport extends Component {
       handleSearchArea = (e) => {
         const searchKey = e.currentTarget.value;
     
-        axios.get("http://localhost:8000/results").then((res) => {
+        axios.get("http://localhost:5000/results").then((res) => {
           if (res.data.success) {
             this.filterData(res.data.existingresults, searchKey);
           }

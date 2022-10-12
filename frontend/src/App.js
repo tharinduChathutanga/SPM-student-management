@@ -16,6 +16,7 @@ import ProtectedRoute from "./component/Route/ProtectedRoute";
 import usersHome from "./components/usersHome";
 import editUser from "./components/editUser";
 import Dashboard from "./component/Dashboard/Dashboard";
+import UserReport from "./components/userreport";
 
 // shamali
 // student payment
@@ -38,7 +39,7 @@ import EditExamResults from './components/Exam Results/EditExamResults';
 import ExamResultsReport from './components/Exam Results/ExamResultsReport';
 
 
-teacher-salary-dilrukshi
+
 //Teacher payment - shamali
 import Teachersaladd from './component/TeacherSalay/TeacherSalAdd.js';
 import TeacherDetails from './component/TeacherSalay/TeacherSalDetails.js';
@@ -85,8 +86,11 @@ function App() {
       <Route exact path="/login" component={LoginSignUp} />
       <ProtectedRoute exact path="/account" component={Profile} />
       <ProtectedRoute exact path="/me/update" component={UpdateProfile} />
+      
 
       <Route path="/admin/users" exact component={usersHome}></Route>
+      
+      <Route path="/userreport" exact component={UserReport}></Route>
       <Route path="/admin/edit/:id" exact component={editUser}></Route>
       <Route path="/admin/dashboard" exact component={Dashboard}></Route>
 
@@ -113,8 +117,8 @@ function App() {
 
         <Route path="/TeachpayAdd" component={Teachersaladd}></Route>
         <Route path="/TeacherSalDetails" exact component={TeacherDetails} />
-        <Route path="/TeacherSalUpdate" exact component={TeacherpayUpdate} />
-        <Route path="/SalaryReport" exact component={TeacherSalaryReport} />
+        <Route path="/teachUpdate/:id" exact component={TeacherpayUpdate} />
+        <Route path="/teachReport" exact component={TeacherSalaryReport} />
 
 
      

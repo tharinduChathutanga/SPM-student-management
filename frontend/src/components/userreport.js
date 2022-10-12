@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import axios from "../action/axios";
 import swal from "sweetalert";
 import "./Allusers.css";
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
 
-export default class usersHome extends Component {
+export default class UserReport extends Component {
   constructor(props) {
     super(props);
 
@@ -27,25 +29,7 @@ export default class usersHome extends Component {
     });
   }
 
-  onDelete = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this imaginary file!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        axios.delete(`/api/v1//postUser/delete/${id}`).then((res) => {
-          swal("Deleted Successful", "User Details are removed", "success");
 
-          this.retrievePosts();
-        });
-      } else {
-        swal("Your imaginary file is safe!");
-      }
-    });
-  };
 
   filterData(posts, searchKey) {
     const result = posts.filter(
@@ -67,6 +51,27 @@ export default class usersHome extends Component {
       }
     });
   };
+
+  jsPdfGenerator = () => {
+
+    swal("Done!", "Your Report is Downloding!", "success")
+    //new document in jspdf
+    var doc = new jsPdf('l', 'pt', 'a3');
+    doc.text(600, 20, 'All Users Details Report', { align: 'center' },);
+    doc.autoTable({ html: '#user-table' })
+    doc.autoTable({
+
+        columnStyles: { europe: { halign: 'center' } },
+
+        margin: { top: 10 },
+
+    })
+
+    //save the pdf
+
+    doc.save("Student User Details.pdf");
+
+}
 
   render() {
     return (
@@ -90,7 +95,7 @@ export default class usersHome extends Component {
         </div>
        
 
-        <table className="table table-striped">
+        <table className="table table-striped" id="user-table">
           <thead>
             <tr>
               <th scope="col">User ID</th>
@@ -98,7 +103,6 @@ export default class usersHome extends Component {
               <th scope="col">Email</th>
               <th scope="col">Role</th>
               <th scope="col">idNumber</th>
-              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -112,25 +116,16 @@ export default class usersHome extends Component {
                 <td>{posts.idNumber}</td>
                 <td>{posts.password}</td>
 
-                <td>
-                  <a className="btn btn-warning" href={`edit/${posts._id}`}>
-                    <i className="fas fa-edit"></i>&nbsp;EDIT
-                  </a>
-                  &nbsp;
-                  <a
-                    className="btn btn-danger"
-                    href="#"
-                    onClick={() => this.onDelete(posts._id)}
-                  >
-                    <i className="fas fa-trash-alt"></i>&nbsp;DELETE
-                  </a>
-                </td>
+                
               </tr>
             ))}
           </tbody>
         </table>
-        <button className="btn btn-primary"><a href="/userreport" style={{ fontSize:'medium', textDecoration: 'none', color: 'white' }}>User Report</a> </button>
+        <button className="btn btn-outline-primary" style={{
 
+fontSize: 'medium',
+
+}} onClick={this.jsPdfGenerator}><b>Generate Report PDF</b></button>
       </div>
     );
   }

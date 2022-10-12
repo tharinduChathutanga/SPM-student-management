@@ -1,5 +1,5 @@
 import React ,{ Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import jsPdf from 'jspdf';
 import 'jspdf-autotable';
 
@@ -18,7 +18,7 @@ componentDidMount(){
 }
 
 retrieveTimeTables() {
-    axios.get("http://localhost:8000/timetables").then((res) => {
+    axios.get("http://localhost:5000/timetables").then((res) => {
       console.log("hello");
       if (res.data.success) {
         this.setState({
@@ -46,7 +46,7 @@ retrieveTimeTables() {
   handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8000/timetables").then((res) => {
+    axios.get("http://localhost:5000/timetables").then((res) => {
       if (res.data.success) {
         this.filterData(res.data.existingtimetables, searchKey);
       }

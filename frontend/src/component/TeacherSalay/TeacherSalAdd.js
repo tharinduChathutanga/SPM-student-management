@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../action/axios';
 import swal from 'sweetalert';
 import BG from '../../images/teacher.gif';
 
@@ -77,7 +77,7 @@ export default class TeacherSalAdd extends Component {
             .then((willDelete) => {
                 if (willDelete) {
 
-                    axios.post("http://localhost:8000/teacsal/save", data).then((res) => {
+                    axios.post("http://localhost:5000/teacsal/save", data).then((res) => {
                         if (res.data.success) {
 
                             this.setState(
