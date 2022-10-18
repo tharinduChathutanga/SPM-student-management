@@ -47,7 +47,12 @@ const maill = () => {
 
                     <lable>Message</lable>
                     <textarea type="message" name="emailms" rows="4" className="form-control" style={{ fontSize: 'medium' }} />
-                    <input type="submit" value="Send" className="form-control btn btn-primary" style={{ marginTop: "30px", fontSize: 'medium' }} />
+                    
+                    &nbsp;
+                    <input type="submit" value="Send" className='btn btn-primary' style={{
+                       
+                        height : '12%'
+                    }} />
 
                     
                 </form>

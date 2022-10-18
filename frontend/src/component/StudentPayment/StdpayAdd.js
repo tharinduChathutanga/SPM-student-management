@@ -58,13 +58,15 @@ export default class StdpayAdd extends Component {
         //validation
         const semail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const re = /^[0-9\b]+$/;
+        const parentname = /^[a-zA-Z]/;
+
         if (sfirstName == "" || slastName == "" || studentId == "" || gradeLevel == "" || mobiNum == "" || email == "" || parentName == "" || payMethod == "" || parentMnu == "") {
             swal("Please fill the form correctly", "Form values cannot be empty", "error");
         }
-        else if (studentId.length < 2) {
+        else if (studentId.length < 11) {
             swal("Invalid Student ID", "STD length should be 11 character & Number", "error");
         }
-        else if (studentId.length > 11) {
+        else if (studentId.length >11) {
             swal("Invalid Student ID", "STD length should be 11 character & Number ", "error");
         }
         else if ((!re.test(String(mobiNum))) || (mobiNum.length != 10)) {
@@ -72,53 +74,69 @@ export default class StdpayAdd extends Component {
 
         } else if ((!semail.test(String(email)))) {
             swal("Invalid email address !", "Please enter valid email address !", "error");
-         
+
         }
         else if ((!re.test(String(parentMnu))) || (parentMnu.length != 10)) {
-            swal("Invalid ParentContact Number", "There should be a valid pattern for contact number", "error");
+            swal("Invalid Parent Contact Number", "There should be a valid pattern for contact number", "error");
 
-        } 
+        }else if ((!parentname.test(String(parentName)))) {
+            swal("Invalid  Parent Name ", "There should be character", "error");
+
+        }else if ((!parentname.test(String(sfirstName)))) {
+            swal("Invalid  Student First Name ", "There should be character", "error");
+
+        }else if ((!parentname.test(String(slastName)))) {
+            swal("Invalid  Student Last Name", "There should be character", "error");
+
+        }
+        else if (payMethod.length > 4) {
+            swal("Invalid Payment Method", "Choose a valid Payment Method from drop down list; other than the word 'Select' ", "error");
+          }
+          else if (gradeLevel.length > 2) {
+            swal("Invalid Grade Level", "Choose a valid Grade level from drop down list; other than the word 'Select' ", "error");
+          }
+        
         else {
 
-        swal({
-            title: "Are you sure?",
-            text: `Student First name: ${this.state.sfirstName} |Student Last name: ${this.state.slastName} | Student ID.: ${this.state.studentId} | Grade Level: ${this.state.gradeLevel} | Student Mobile Number: ${this.state.mobiNum} | Email: ${this.state.email} | Parent Name: ${this.state.parentName} | Payment Method: ${this.state.payMethod} | Parent Number : ${this.state.parentMnu}`,
-            icon: "info",
-            buttons: true,
-            dangerMode: true,
-        })
-            .then((willDelete) => {
-                if (willDelete) {
+            swal({
+                title: "Are you sure?",
+                text: `Student First name: ${this.state.sfirstName} |Student Last name: ${this.state.slastName} | Student ID.: ${this.state.studentId} | Grade Level: ${this.state.gradeLevel} | Student Mobile Number: ${this.state.mobiNum} | Email: ${this.state.email} | Parent Name: ${this.state.parentName} | Payment Method: ${this.state.payMethod} | Parent Number : ${this.state.parentMnu}`,
+                icon: "info",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
 
-                    axios.post("http://localhost:5000/stdpay/save", data).then((res) => {
-                        if (res.data.success) {
+                        axios.post("http://localhost:5000/stdpay/save", data).then((res) => {
+                            if (res.data.success) {
 
-                            this.setState(
-                                {
-                                    sfirstName: "",
-                                    slastName: "",
-                                    studentId: "",
-                                    gradeLevel: "",
-                                    mobiNum: "",
-                                    email: "",
-                                    parentName: "",
-                                    payMethod: "",
-                                    parentMnu: "",
+                                this.setState(
+                                    {
+                                        sfirstName: "",
+                                        slastName: "",
+                                        studentId: "",
+                                        gradeLevel: "",
+                                        mobiNum: "",
+                                        email: "",
+                                        parentName: "",
+                                        payMethod: "",
+                                        parentMnu: "",
 
-                                }
+                                    }
 
-                            )
+                                )
 
-                        } 
-                    })
-                    swal("Student Payment Details Added Successfully!", {
-                        icon: "success",
-                    });
-                    this.props.history.push('/success');
-                } else {
-                    swal("Not completed!");
-                }
-            });
+                            }
+                        })
+                        swal("Student Payment Details Added Successfully!", {
+                            icon: "success",
+                        });
+                        this.props.history.push('/success');
+                    } else {
+                        swal("Not completed!");
+                    }
+                });
 
         }
     }
@@ -150,7 +168,7 @@ export default class StdpayAdd extends Component {
             parentName: "Nimal De Silva"
         })
         this.setState({
-            payMethod: "Credit-card"
+            payMethod: "Card"
         })
         this.setState({
             parentMnu: "0112415236"
@@ -176,27 +194,27 @@ export default class StdpayAdd extends Component {
                                 </div>
                             </div>
                         </section>
-                        <img className="S.gif" src={BG} alt='bg img' style={{ width: "60%", marginTop: "50px", marginRight: "5px" }} />
+                        <img className="S.gif" src={BG} alt='bg img' style={{ height: "50%", marginTop: "50px", marginRight: "5px" }} />
 
 
                     </div>
 
-                    <div class="col-6" style={{
-                        marginLeft: '20%',
-                        width: '80%',
+                    <div class="col-md-9 mt-4 mx-auto" style={{
+
+                        width: '40%',
                     }}>
 
-                        <div style={{ marginTop: "-30%" }}>
-                            <div className="myformstyle" style={{ width: "140%", marginLeft: "10px" }}>
+                        <div style={{ marginTop: "0%" }}>
+                            <div className="myformstyle" style={{ width: "140%", marginLeft: "-120px" }}>
 
                                 <div className="card-body">
                                     <div className="col-md-9 mt-4 mx-auto">
                                         <h2 className="text-center topic" style={{ color: '#000080', fontFamily: 'sans-serif', fontSize: '40px' }}>Student Payment Registration </h2>
                                         <br></br>
-                                        <form className="needs-validation" align="center" style={{ width: "100%" }} >
-                                            <label style={{ marginBottom: '5px', marginLeft: '-50%' }} className="topic">Student First Name : </label>
+                                        <form className="needs-validation" align="center" >
+                                            <label style={{ marginLeft: '-72%' }} className="topic">Student First Name : </label>
                                             <div class="row">
-                                                <div class="col-6" style={{ width: '40px' }}>
+                                                <div class="col-6" >
                                                     <input type="text"
                                                         className="form-control"
                                                         name="sfirstName"
@@ -211,13 +229,13 @@ export default class StdpayAdd extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '50%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
 
                                                 }}>
-                                                    <label style={{ marginBottom: '5px', }} className="topic">Student Last Name : </label>
+                                                    <label style={{ marginLeft: '-45%' }} className="topic">Student Last Name : </label>
 
-                                                    <div class="col-25" style={{ marginLeft: '20px' }} >
+                                                    <div class="col-25"  >
                                                         <input type="text"
                                                             className="form-control"
                                                             name="slastName"
@@ -233,7 +251,7 @@ export default class StdpayAdd extends Component {
                                                 </div>
                                             </div>
 
-                                            <label style={{ marginBottom: '5px', marginLeft: '-40%' }} className="topic">Student Registration Number : </label>
+                                            <label style={{ marginLeft: '-60%' }} className="topic">Student Registration Number : </label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input type="text"
@@ -250,7 +268,7 @@ export default class StdpayAdd extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '30%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
                                                 }}>
                                                     <label style={{ marginBottom: '5px' }} className="topic">Grade Level : </label>
@@ -269,9 +287,9 @@ export default class StdpayAdd extends Component {
 
                                                 </div>
                                             </div>
-                                            <label style={{ marginBottom: '5px', marginLeft: '-50%' }} className="topic">Mobile Number : </label>
+                                            <label style={{ marginLeft: '-42%' }} className="topic">Mobile Number : </label>
                                             <div class="row">
-                                                <div class="col-6" style={{ width: '40px' }}>
+                                                <div class="col-6" >
                                                     <input type="text"
                                                         className="form-control"
                                                         name="mobiNum"
@@ -286,11 +304,11 @@ export default class StdpayAdd extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '50%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
 
                                                 }}>
-                                                    <label style={{ marginBottom: '5px', }} className="topic">Email : </label>
+                                                    <label style={{ marginLeft: '-60%' }} className="topic">Email : </label>
 
                                                     <div class="col-25" style={{ marginLeft: '20px' }} >
                                                         <input type="text"
@@ -308,7 +326,7 @@ export default class StdpayAdd extends Component {
                                                 </div>
                                             </div>
 
-                                            <label style={{ marginTop: '-0px', marginLeft: '-75%' }} className="topic">Parent Name : </label>
+                                            <label style={{ marginLeft: '-80%' }} className="topic">Parent Name : </label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input type="text"
@@ -324,7 +342,7 @@ export default class StdpayAdd extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '30%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
                                                 }}>
                                                     <label style={{ marginBottom: '5px' }} className="topic">Payment Method : </label>
@@ -339,14 +357,14 @@ export default class StdpayAdd extends Component {
 
                                                         <option value="Select">Select</option>
                                                         <option value="Cash">Cash</option>
-                                                        <option value="Credit-card">Credit-card</option> </select>
+                                                        <option value="Card">Card</option> </select>
 
 
 
                                                 </div>
 
                                             </div>
-                                            <label style={{ marginTop: '-0px', marginLeft: '-65%' }} className="topic">Parent Contact Number : </label>
+                                            <label style={{ marginLeft: '-68%' }} className="topic">Parent Contact Number : </label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input type="text"
@@ -365,7 +383,7 @@ export default class StdpayAdd extends Component {
                                                 <button type="button" onClick={this.demo} style={{ textAlign: 'center', textDecoration: 'none', fontSize: 'medium' }} class="btn btn-outline-info" > Demo </button>
                                                 <br></br>
                                                 <br></br>
-                                                <button type="button"  style={{ textAlign: 'center', textDecoration: 'none', fontSize: 'medium' }} class="btn btn-outline-success" onClick={this.onSubmit} > Add Student Payment Details </button>
+                                                <button type="button" style={{ textAlign: 'center', textDecoration: 'none', fontSize: 'medium' }} class="btn btn-outline-success" onClick={this.onSubmit} > Add Student Payment Details </button>
                                                 <br></br>
                                                 <br></br>
 

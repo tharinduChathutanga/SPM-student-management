@@ -89,24 +89,26 @@ class StdpayReport extends Component {
     render() {
         return (
             <div className="container" >
-                <br></br>
-                <br></br>
+              
                 <div className='text-center'>
-                    <h1 > Student Payment Details </h1></div>
+                    <h1 style={{
+                        color : "#000080"
+                    }}> Student Payment Details </h1></div>
 
 
                 <div className="row">
-                    <div className="col-lg-0 mt-0 mb-2"
+                    <div className="col-lg-20 mt-2 mb-2"
                     >
 
                         <br></br>
-                        <h4>Search Student Payment details</h4>
+                       
                     </div>
-                    <div className="col-lg-3 mt-2 mb-2">
+                    <div className="col-lg-20 mt-2 mb-2">
                         <input
                             className="form-control"
                             style={{
                                 fontSize: 'medium',
+                                marginLeft : '90%'
                             }}
                             type="search"
                             placeholder="Search by Student ID"
@@ -168,6 +170,7 @@ class StdpayReport extends Component {
                 </table>
                 <button className="btn btn-outline-primary" style={{
                     fontSize: 'medium',
+                  marginRight : '80%'
                 }} onClick={this.jsPdfGenerator}><b>Generate Report PDF</b></button>
 
             </div>

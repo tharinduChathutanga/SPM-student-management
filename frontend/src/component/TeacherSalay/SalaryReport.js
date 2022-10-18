@@ -93,24 +93,26 @@ class SalaryReport extends Component {
     render() {
         return (
             <div className="container" >
-                <br />
-                <br />
+               
 
                 <div className='text-center'>
-                    <h1 > Teacher Salary Details </h1></div>
+                    <h1 style={{
+                        color : "#000080"
+                    }}> Teacher Salary Details </h1></div>
 
 
 
                 <div className="row">
-                    <div className="col-lg-0 mt-0 mb-2">
+                    <div className="col-lg-10 mt-2 mb-8">
                         <br></br>
-                        <h4>Search Teacher Salary details</h4>
+                      
                     </div>
-                    <div className="col-lg-3 mt-2 mb-2">
+                    <div className="col-lg-10 mt-2 mb-8">
                         <input
                             className="form-control"
                             style={{
                                 fontSize: 'medium',
+                                marginLeft : '150%'
                             }}
                             type="search"
                             placeholder="Search by Teacher ID / Name"
@@ -173,6 +175,7 @@ class SalaryReport extends Component {
                 </table >
                 <button className="btn btn-outline-primary" style={{
                     fontSize: 'medium',
+                    marginRight : '80%'
                 }} onClick={this.jsPdfGenerator}><b>Generate Report PDF</b></button>
 
             </div >

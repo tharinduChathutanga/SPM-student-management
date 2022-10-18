@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from '../../action/axios';
 import swal from "sweetalert";
-//import "../Component/Stdp.css";
+
 
 
 
@@ -100,20 +100,24 @@ class StdPayDetails extends Component {
     render() {
         return (
             <div className="container" >
-                <br />
-                <br />
+               
+                
                 <div className='text-center'>
-                    <h3> Student Payment Registration Details </h3></div>
-
+                    <h1 style={{
+                        color : "#000080"
+                    }}>Student Payment Registration Details </h1></div>
+                   
                 <button class="btn"><i class="fa fa-home" style={{ width: '80%' }}></i></button>
-                <button type="button" class="btn btn-success">
-                    <a href="/" class="previous" style={{ color: 'white', fontSize: 'medium' }}>&laquo; Previous</a></button>
+               
                 <div className="col-lg-3 mt-2 mb-2" style={{
                     fontSize: 'large',
                 }}>
+                    <br></br>
+                    <br></br>
                     <input
                         className="form-control" style={{
                             fontSize: 'medium',
+                            marginLeft : '40%'
                         }}
                         type="search"
                         fontSize='medium'
@@ -125,6 +129,11 @@ class StdPayDetails extends Component {
                     </input>
 
                 </div>
+                <br />
+                    <br />
+                    <br />
+                    <br />
+                   
                 <table class="table">
                     <thead>
                         <tr>
@@ -135,9 +144,7 @@ class StdPayDetails extends Component {
                             <th scope="col">Grade Level</th>
                             <th scope="col">Mobile Number</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Parent Name</th>
                             <th scope="col">Payment Method</th>
-                            <th scope="col">Parent Contact Number </th>
                             <th scope="col">Action </th>
 
 
@@ -162,54 +169,39 @@ class StdPayDetails extends Component {
                                     <td>{posts.gradeLevel}</td>
                                     <td>{posts.mobiNum}</td>
                                     <td>{posts.email}</td>
-                                    <td>{posts.parentName}</td>
                                     <td>{posts.payMethod}</td>
-                                    <td>{posts.parentMnu}</td>
+                                  
 
 
                                     <td>
-                                        <a className="btn btn-primary" style={{ fontSize: 'medium' }} href="/mail">
-                                            <i className="fas fa-edit" style={{ fontSize: 'large' }}></i>Request
-
-                                        </a>
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
+                                        
+                                       
                                         <a className="btn btn-warning" style={{ fontSize: 'medium' }} href={`/StdUpdate/${posts._id}`} >
-                                            <i class="fas fa-edit" style={{ fontSize: 'medium' }} ></i> &nbsp;
+                                            <i class="fas fa-edit" style={{ fontSize: 'medium' }} ></i>
                                             Edit
                                         </a>
                                         &nbsp;
-
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
+                                       
+                                       
                                         <button className="btn btn-danger" style={{ fontSize: 'medium' }} onClick={() => { this.onDelete(posts._id) }}>
-                                            <i className="fas fa-trash-alt" style={{ fontSize: 'medium' }}></i>&nbsp;Delete
+                                            <i className="fas fa-trash-alt" style={{ fontSize: 'medium' }}></i>Delete
 
                                         </button>
+                                       
+                                        
+                                       
+                                       
+                                        <button className="btn btn-link"><a href= "/mail" style={{ fontSize: 'medium' }} >
+                                            <i className="fas fa-trash-alt" style={{ fontSize: 'medium' }}></i>Request</a>
+
+                                        </button>
+                                        &nbsp;
+                                        
+                                       
+                                       
+
+                                      
+                                      
                                     </td>
                                 </tr>
                             ))}

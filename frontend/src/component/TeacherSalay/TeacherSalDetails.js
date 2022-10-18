@@ -71,7 +71,10 @@ class TeacherSalDetails extends Component {
 
         const result = posts.filter((post) =>
             post.teachName.toLowerCase().includes(searchKey) ||
-            post.teachId.toLowerCase().includes(searchKey)
+            post.teachId.toLowerCase().includes(searchKey) ||
+            post.workingday.toLowerCase().includes(searchKey)||
+            post.leaveDay.toLowerCase().includes(searchKey)||
+            post.deparment.toLowerCase().includes(searchKey)
 
 
 
@@ -97,19 +100,22 @@ class TeacherSalDetails extends Component {
     render() {
         return (
             <div className="container" >
-                <br />
-                <br />
+               
                 <div className='text-center'>
-                    <h3> Teacher Salary Details </h3></div>
+                    <h1 style={{
+                        color : "#000080"
+                    }}> Teacher Salary Details </h1></div>
 
                 <button class="btn"><i class="fa fa-home" style={{ width: '80%' }}></i></button>
-                <button type="button" class="btn btn-success">
-                    <a href="/" class="previous" style={{ color: 'white', fontSize:'medium' }}>&laquo; Previous</a></button>
+                
                 <div className="col-lg-3 mt-2 mb-2">
+                <br></br>
+                    <br></br>
                     <input
                         className="form-control"
                         style={{
                             fontSize:'medium',
+                            marginLeft : '60%'
                         }}
                         type="search"
                         placeholder="search"
@@ -181,7 +187,7 @@ class TeacherSalDetails extends Component {
 
 
                 </table >
-                <button className="btn btn-primary"><a href="/teachReport" style={{ fontSize:'medium', textDecoration: 'none', color: 'white' }}>Teacher Salary Report</a> </button>
+                <button className="btn btn-primary"><a href="/teachReport" style={{ fontSize:'medium', textDecoration: 'none', color: 'white' , }}>Teacher Salary Report</a> </button>
 
             </div >
 

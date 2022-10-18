@@ -54,15 +54,41 @@ export default class TeacherSalAdd extends Component {
         console.log(data)
 
         //validation
+        const parentname = /^[a-zA-Z]/;
+        const number = /\-?\d*\.?\d{1,2}/;
+        const re = /^[0-9\b]+$/;
        
         if (teachName == "" || teachId == "" || workingday == "" || leaveDay == "" || epf == "" || basicsal == "" || deparment == "" ) {
             swal("Please fill the form correctly", "Form values cannot be empty", "error");
         }
-        else if (teachId.length < 2) {
-            swal("Invaid Teacher ID", "Teacher id Length should be greater than 2", "error");
+        else if (teachId.length < 11) {
+            swal("Invaid Teacher ID", "Teacher id Length should be 11 number or character", "error");
         }
-        else if (teachId.length > 12) {
-            swal("Invaid Teacher ID", "Teacher id Length should be 10 number or character", "error");
+        else if (teachId.length > 11) {
+            swal("Invaid Teacher ID", "Teacher id Length should be 11 number or character", "error");
+        }
+        else if ((!parentname.test(String(teachName)))) {
+            swal("Invalid Teacher name", "There should be character", "error");
+
+        }
+        else if ((!number.test(String(workingday)))) {
+            swal("Invalid Woring day", "There should be number format", "error");
+
+        }
+        else if ((!number.test(String(leaveDay)))) {
+            swal("Invalid leaveDay day", "There should be number format", "error");
+
+        }
+        else if (deparment.length > 3) {
+            swal("Invalid Department", "Choose a valid Department from drop down list; other than the word 'Select' ", "error");
+          }
+          else if ((!number.test(String(epf)))) {
+            swal("Invalid epf", "There should be price format", "error");
+
+        }
+        else if ((!number.test(String(basicsal)))) {
+            swal("Invalid basic salary", "There should be price format", "error");
+
         }
         
         else {
@@ -157,21 +183,20 @@ export default class TeacherSalAdd extends Component {
                                 </div>
                             </div>
                         </section>
-                        <img className="S.gif" src={BG} alt='bg img' style={{ width: "100%", height: "90%", marginTop: "-20px", marginRight: "10px" }} />
+                        <img className="S.gif" src={BG} alt='bg img' style={{  height: "70%",  marginTop: "20px", marginLeft: "70px" }} />
 
 
                     </div>
 
-                    <div class="col-6" style={{
-                        marginLeft: '40%',
-                        width: '80%',
+                    <div class="col-md-9 mt-4 mx-auto" style={{
+                        width: '40%',
                     }}>
 
-                        <div style={{ marginTop: "-90%" }}>
-                            <div className="myformstyle" style={{ width: "120%", marginLeft: "180px" }}>
+                        <div style={{ marginTop: "0%" }}>
+                            <div className="myformstyle" style={{ width: "140%", marginLeft: "-10px"  }}>
 
                                 <div className="card-body">
-                                    <div className="col-md-10 mt-3 mx-auto">
+                                    <div className="col-md-9 mt-4 mx-auto">
                                         <br></br>
                                         <h2 className="text-center topic" style={{ color: '#000080', fontFamily: 'sans-serif', fontSize: '30px', marginLeft :'-22%' }}>Teachers Salary Registration Form </h2>
                                        
@@ -198,7 +223,7 @@ export default class TeacherSalAdd extends Component {
                                                         <input type="text"
                                                             className="form-control"
                                                             name="teachId"
-                                                            placeholder="Enter Last Name"
+                                                            placeholder="Enter Teacher ID"
                                                             value={this.state.teachId}
                                                             onChange={this.handleInputChange}
                                                             required
@@ -213,7 +238,7 @@ export default class TeacherSalAdd extends Component {
                                             <label style={{ marginBottom: '5px', marginLeft: '-76%' }} className="topic">Working Days : </label>
                                             <div class="row">
                                                 <div class="col-9">
-                                                    <input type="number"
+                                                    <input type="string"
                                                         className="form-control"
                                                         name="workingday"
                                                         placeholder="Working Dayas"
@@ -228,7 +253,7 @@ export default class TeacherSalAdd extends Component {
                                                 
                                                     <label style={{ marginBottom: '5px',  marginLeft: '-38%' }} className="topic">Leave Days : </label>
                                                     <div class="col-9">
-                                                    <input type="number"
+                                                    <input type="string"
                                                         className="form-control"
                                                         name="leaveDay"
                                                         placeholder="Leave Dayas"

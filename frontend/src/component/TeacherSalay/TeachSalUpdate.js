@@ -172,18 +172,17 @@ class TeachSalUpdate extends Component {
                                 </div>
                             </div>
                         </section>
-                        <img className="S.gif" src={BG} alt='bg img' style={{ width: "100%", height: "90%", marginTop: "-0px", marginRight: "10px" }} />
+                        <img className="S.gif" src={BG} alt='bg img' style={{  height: "70%",  marginTop: "20px", marginLeft: "70px" }} />
 
 
                     </div>
 
-                    <div class="col-6" style={{
-                        marginLeft: '40%',
-                        width: '80%',
+                    <div class="col-md-9 mt-4 mx-auto" style={{
+                        width: '40%',
                     }}>
 
-                        <div style={{ marginTop: "-110%" }}>
-                            <div className="myformstyle" style={{ width: "120%", marginLeft: "180px" }}>
+                        <div style={{ marginTop: "0%" }}>
+                            <div className="myformstyle" style={{ width: "140%", marginLeft: "-10px"  }}>
 
                                 <div className="card-body">
                                     <div className="col-md-10 mt-3 mx-auto">

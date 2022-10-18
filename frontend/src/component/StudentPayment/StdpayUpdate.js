@@ -190,27 +190,27 @@ class StdpayUpdate extends Component {
                                 </div>
                             </div>
                         </section>
-                        <img className="S.gif" src={BG} alt='bg img' style={{ width: "100%", height: "70%", marginTop: "50px", marginRight: "5px" }} />
+                        <img className="S.gif" src={BG} alt='bg img' style={{  height: "50%", marginTop: "50px", marginRight: "5px" }} />
 
 
                     </div>
 
-                    <div class="col-6" style={{
-                        marginLeft: '40%',
-                        width: '80%',
+                    <div class="col-md-9 mt-4 mx-auto" style={{
+                      
+                        width: '40%',
                     }}>
 
-                        <div style={{ marginTop: "-80%" }}>
-                            <div className="myformstyle" style={{ width: "140%", marginLeft: "10px" }}>
+                        <div style={{ marginTop: "0%" }}>
+                            <div className="myformstyle" style={{ width: "140%", marginLeft: "-120px"  }}>
 
                                 <div className="card-body">
                                     <div className="col-md-9 mt-4 mx-auto">
                                         <h2 className="text-center topic" style={{ color: '#000080', fontFamily: 'sans-serif', fontSize: '40px' }}>Student Payment Update </h2>
                                         <br></br>
-                                        <form className="needs-validation" align="center" style={{ width: "100%" }} >
-                                            <label style={{ marginBottom: '5px', marginLeft: '-50%' }} className="topic">Student First Name : </label>
+                                        <form className="needs-validation" align="center"  >
+                                            <label  className="topic" style={{marginLeft : '-72%'}}>Student First Name : </label>
                                             <div class="row">
-                                                <div class="col-6" style={{ width: '40px' }}>
+                                                <div class="col-6" >
                                                     <input type="text"
                                                         className="form-control"
                                                         name="sfirstName"
@@ -224,13 +224,13 @@ class StdpayUpdate extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '50%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
 
                                                 }}>
-                                                    <label style={{ marginBottom: '5px', }} className="topic">Student Last Name : </label>
+                                                    <label className="topic" style={{marginLeft : '-45%'}}>Student Last Name : </label>
 
-                                                    <div class="col-25" style={{ marginLeft: '20px' }} >
+                                                    <div class="col-25" style={{  }} >
                                                         <input type="text"
                                                             className="form-control"
                                                             name="slastName"
@@ -245,7 +245,7 @@ class StdpayUpdate extends Component {
                                                 </div>
                                             </div>
 
-                                            <label style={{ marginBottom: '5px', marginLeft: '-40%' }} className="topic">Student Registration Number : </label>
+                                            <label  className="topic" style={{marginLeft : '-60%'}}>Student Registration Number : </label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input type="text"
@@ -261,10 +261,10 @@ class StdpayUpdate extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '30%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
                                                 }}>
-                                                    <label style={{ marginBottom: '5px' }} className="topic">Grade Level : </label>
+                                                    <label  className="topic" style={{marginLeft : '-42%'}}>Grade Level : </label>
                                                     <select
                                                         className="form-control"
                                                         name="gradeLevel"
@@ -279,9 +279,9 @@ class StdpayUpdate extends Component {
 
                                                 </div>
                                             </div>
-                                            <label style={{ marginBottom: '5px', marginLeft: '-50%' }} className="topic">Mobile Number : </label>
+                                            <label  className="topic" style={{marginLeft : '-78%'}}>Mobile Number : </label>
                                             <div class="row">
-                                                <div class="col-6" style={{ width: '40px' }}>
+                                                <div class="col-6" style={{  }}>
                                                     <input type="text"
                                                         className="form-control"
                                                         name="mobiNum"
@@ -294,11 +294,11 @@ class StdpayUpdate extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '50%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
 
                                                 }}>
-                                                    <label style={{ marginBottom: '5px', }} className="topic">Email : </label>
+                                                    <label  className="topic" style={{marginLeft : '-60%'}}>Email : </label>
 
                                                     <div class="col-25" style={{ marginLeft: '20px' }} >
                                                         <input type="text"
@@ -314,7 +314,7 @@ class StdpayUpdate extends Component {
                                                 </div>
                                             </div>
 
-                                            <label style={{ marginTop: '-0px', marginLeft: '-75%' }} className="topic">Parent Name : </label>
+                                            <label  className="topic" style={{marginLeft : '-80%'}}>Parent Name : </label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input type="text"
@@ -328,10 +328,11 @@ class StdpayUpdate extends Component {
 
                                                 <div className="form-group" style={{
                                                     width: '30%',
-                                                    marginTop: '-5%',
+                                                    marginTop: '-4%',
 
                                                 }}>
-                                                    <label style={{ marginBottom: '5px' }} className="topic">Payment Method : </label>
+                                                   
+                                                    <label  className="topic" >Payment Method : </label>
                                                     <select
                                                         className="form-control"
                                                         name="payMethod"
@@ -349,7 +350,8 @@ class StdpayUpdate extends Component {
                                                 </div>
 
                                             </div>
-                                            <label style={{ marginTop: '-0px', marginLeft: '-65%' }} className="topic">Parent Contact Number : </label>
+                                            <br></br>
+                                            <label  className="topic"style={{marginLeft : '-68%'}}>Parent Contact Number : </label>
                                             <div class="row">
                                                 <div class="col">
                                                     <input type="text"
