@@ -47,19 +47,38 @@ export default class EditExamResults extends Component {
 
     console.log(data);
 
+    const re = /[s,S]+[0-9]{3}/;
+
     if (
       grade === "" ||
       subject === "" ||
       studentName === "" ||
       studentID === "" ||
       marks === "" ||
-      gradeReceived === ""
+      gradeReceived === "" 
     ) {
       swal(
         "Please fill the form correctly",
         "Form values cannot be empty",
         "error"
       );
+      
+
+    } else if (
+      !re.test(String(studentID)) ||
+      studentID.length !== 4 
+    ) 
+    
+    {
+      swal(
+        "Invaid Student Registration Number!",
+        "There should be a valid pattern for Student Registration number",
+        "error"
+      );
+
+
+    } else if (marks > 100 || marks < 0){
+      swal("Invalid Marks", "Enter valid mark between 0 and 100", "error");
     } else {
       swal({
         title: "Are you sure?",
@@ -133,7 +152,7 @@ export default class EditExamResults extends Component {
             <div className="form-group">
 
 
-            <div className="form-group" style={{ marginBottom: '15px' }}><br></br>
+            <div className="form-group" style={{ marginBottom: '15px', width: '400px' }}><br></br>
                         <label style={{ marginBottom: '5px',fontSize:'19px' }} className="topic"><b>Grade:</b></label>
                         <select
                       className="form-control"
@@ -233,7 +252,7 @@ export default class EditExamResults extends Component {
                       </div>
           
           </div>
-          <br></br>
+        
           <div className="container" style={{ width: "170px" }}>
             <button
               type="submit"

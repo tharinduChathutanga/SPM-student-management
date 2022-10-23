@@ -60,7 +60,6 @@ export default class ExamResults extends Component {
         results.subject.toLowerCase().includes(searchKey) ||
         results.studentName.toLowerCase().includes(searchKey) ||
         results.studentID.toLowerCase().includes(searchKey) ||
-        results.marks.toLowerCase().includes(searchKey) ||
         results.gradeReceived.toLowerCase().includes(searchKey)
     );
     this.setState({ results: result });
@@ -126,7 +125,7 @@ export default class ExamResults extends Component {
             ></input>
           </form>
         </div>
-        <br></br>
+        <br></br><br></br><br></br>
 
         <button
           className="btn btn-primary btn-lg active"
@@ -143,9 +142,9 @@ export default class ExamResults extends Component {
             Add Result
           </a>
         </button>
-        <button className="btn-primary" style={{ marginTop: '15px',marginLeft:'10px',padding:"9px", backgroundColor: '#000080' }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Download Exam Results</button>
+        <button className="btn-primary" style={{ marginTop: '2px',marginLeft:'10px',padding:"9px", backgroundColor: '#000080', color:"white" }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Download Exam Results</button>
 
-        <br></br><br></br>
+        <br></br><br></br><br></br>
 
         <table className="table table-striped" Id = "class-table">
           <thead className="thead-dark">

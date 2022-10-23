@@ -37,7 +37,6 @@ export default class ExamResultsReport extends Component {
           (results) =>
           results.studentName.toLowerCase().includes(searchKey) ||
           results.studentID.toLowerCase().includes(searchKey) ||
-          results.marks.toLowerCase().includes(searchKey) ||
           results.gradeReceived.toLowerCase().includes(searchKey)
         );
         this.setState({ results: result });
@@ -107,9 +106,9 @@ export default class ExamResultsReport extends Component {
               <br></br>
       
               
-              <button className="btn-primary" style={{ marginTop: '15px',marginLeft:'10px',padding:"9px", backgroundColor: '#000080' }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Download Exam Results</button>
+              <button className="btn-primary" style={{ marginTop: '15px',marginLeft:'10px',padding:"9px", backgroundColor: '#000080', color: "white" }} onClick={this.jsPdfGenerator}><i className="fas fa-download"></i>&nbsp;Download Exam Results</button>
       
-              <br></br><br></br>
+              <br></br><br></br><br></br>
       
               <table className="table table-striped" Id = "class-table" style={{width:"750px"}}>
                 <thead className="thead-dark">
